@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Head from "next/head";
 import nisi from "../public/nisi.jpeg";
 import WorkCards from "./components/WorkCards";
 import Footer from "./components/Footer";

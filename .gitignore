@@ -38,3 +38,5 @@ next-env.d.ts
 
 # prettier
 .prettierrc
+# Local Netlify folder
+.netlify
