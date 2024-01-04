@@ -1,15 +1,14 @@
 import Image from "next/image";
-import Head from "next/head";
-import nisi from "../public/nisi.jpeg";
-import WorkCards from "./components/WorkCards";
+import nisi from "@/public/nisi.jpeg";
 import Footer from "./components/Footer";
 import Socials from "./components/Socials";
+import ProjectCards from "./components/ProjectCards";
 
 export default function Home() {
   return (
     <div className="bg-gray-700 min-h-screen p-4">
-      <div className="mx-auto my-10 text-lg lg:w-[1000px] bg-gray-800 text-white rounded-xl shadow-2xl shadow-gray-800 overflow-hidden">
-        <div className="p-4 m-4 sm:m-6 lg:m-8 border-slate-700 border-b">
+      <div className="mx-auto my-10 text-lg lg:w-[1000px] bg-gray-800 text-white rounded-3xl shadow-2xl shadow-gray-800 overflow-hidden">
+        <section className="p-4 m-4 sm:m-6 lg:m-8 border-slate-700 border-b">
           <div className="flex items-center">
             <Image
               src={nisi}
@@ -22,38 +21,37 @@ export default function Home() {
               Nisiman
             </h1>
           </div>
-        </div>
+        </section>
 
         {/* About section */}
-        <div className="p-4 m-4 lg:w-3/4 sm:m-6 lg:mx-8 lg:my-4">
-          <h2 className="text-lg font-bold leading-tight sm:text-2xl">About</h2>
+        <section className="p-4 m-4 lg:w-3/4 sm:m-6 lg:mx-8 lg:my-4">
+          <h2 className="text-xl font-bold leading-tight sm:text-2xl">About Me</h2>
           <p className="mt-2">
-            Hi there 👋🏼 ! I&apos;m Nisiman, a final year BEng(hons) Computer
-            Science student at The University of Edinburgh. I am currently
-            writing my dissertation on generating a synthetic email meta
-            dataset.
+            Hi there 👋🏼 ! I&apos;m Nisiman, a final year BEng(Hons) Computer
+            Science student at The University of Edinburgh. I am doing my
+            honours project on generating a synthetic email meta dataset.
           </p>
 
           <p className="mt-2">
-            My interests lie in Software and Web Development, Machine Learning,
-            Distributed/Parallel Computing and Natural Language Processing.
-          </p>
-
-          <p className="mt-2">
-            In my free time, I like working out, playing chess and listen to
+            I am mainly interested in Software and Web Development, Machine Learning,
+            Distributed/Parallel Computing and Natural Language Processing. In
+            my free time, I like working out, playing chess and listening to
             French House music.
           </p>
-        </div>
 
-        {/* Work section */}
-        <div className="p-4 m-4 sm:m-6 lg:mx-8 lg:my-4">
-          <h2 className="text-lg font-bold leading-tight sm:text-2xl">Work</h2>
-          <WorkCards />
-        </div>
+        </section>
+
+        {/* Projects */}
+        <section className="p-4 m-4 sm:m-6 lg:mx-8 lg:my-4">
+          <h2 className="text-xl font-bold leading-tight sm:text-2xl">
+            Projects
+          </h2>
+          <ProjectCards />
+        </section>
 
         {/* Learning */}
-        <div className="p-4 m-4 sm:m-6 lg:mx-8 lg:my-4">
-          <h2 className="text-lg font-bold leading-tight sm:text-2xl">
+        <section className="p-4 m-4 sm:m-6 lg:mx-8 lg:my-4">
+          <h2 className="text-xl font-bold leading-tight sm:text-2xl">
             Learning
           </h2>
           <p className="mt-2">
@@ -61,18 +59,18 @@ export default function Home() {
             and Designs of IoT Systems and Machine Learning Practical. I am also
             learning Rust in my spare time by working on a few side projects.
           </p>
-        </div>
+        </section>
 
         {/* Contact */}
-        <div className="p-4 m-4 sm:m-6 lg:mx-8 lg:my-4 border-slate-700 border-b">
-          <h2 className="text-lg font-bold leading-tight sm:text-2xl">
+        <section className="p-4 m-4 sm:m-6 lg:mx-8 lg:my-4 border-slate-700 border-b">
+          <h2 className="text-xl font-bold leading-tight sm:text-2xl">
             Contact
           </h2>
           <p className="mt-2">
             Feel free to contact or follow me on any of my socials:{" "}
           </p>
           <Socials />
-        </div>
+        </section>
 
         {/* Footer */}
         <Footer />

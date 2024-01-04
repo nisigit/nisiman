@@ -6,7 +6,7 @@ export default function Footer() {
           View Resume
         </a>
       </span>
-      <p className="text-xs text-slate-400">© 2024 — All Rights Reserved</p>
+      <p className="text-xs text-slate-400">© Nisiman 2024. All Rights Reserved</p>
       <a href="https://github.com/nisigit/nisigit.github.io">
         <p className="text-sm">Built with ❤️ using Next.js and Tailwind CSS</p>
       </a>
