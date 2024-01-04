@@ -3,11 +3,12 @@ import nisi from "@/public/nisi.jpeg";
 import Footer from "./components/Footer";
 import Socials from "./components/Socials";
 import ProjectCards from "./components/ProjectCards";
+import WorkCards from "./components/WorkCards";
 
 export default function Home() {
   return (
     <div className="bg-gray-700 min-h-screen p-4">
-      <div className="mx-auto my-10 text-lg lg:w-[1000px] bg-gray-800 text-white rounded-3xl shadow-2xl shadow-gray-800 overflow-hidden">
+      <div className="mx-auto my-10 text-lg lg:w-[1000px] xl:w-[1100px] bg-gray-900 text-white rounded-3xl shadow-2xl shadow-gray-800 overflow-hidden">
         <section className="p-4 m-4 sm:m-6 lg:m-8 border-slate-700 border-b">
           <div className="flex items-center">
             <Image
@@ -24,21 +25,27 @@ export default function Home() {
         </section>
 
         {/* About section */}
-        <section className="p-4 m-4 lg:w-3/4 sm:m-6 lg:mx-8 lg:my-4">
-          <h2 className="text-xl font-bold leading-tight sm:text-2xl">About Me</h2>
+        <section className="p-4 m-4 lg:w-5/6 sm:m-6 lg:mx-8 lg:my-4">
+          <h2 className="text-xl font-bold leading-tight sm:text-2xl">
+            About Me
+          </h2>
           <p className="mt-2">
             Hi there 👋🏼 ! I&apos;m Nisiman, a final year BEng(Hons) Computer
             Science student at The University of Edinburgh. I am doing my
             honours project on generating a synthetic email meta dataset.
           </p>
-
           <p className="mt-2">
-            I am mainly interested in Software and Web Development, Machine Learning,
-            Distributed/Parallel Computing and Natural Language Processing. In
-            my free time, I like working out, playing chess and listening to
-            French House music.
+            I am mainly interested in Software and Web Development, Machine
+            Learning, Distributed/Parallel Computing and Natural Language
+            Processing. In my free time, I like working out, playing chess and
+            listening to French House music.
           </p>
+        </section>
 
+        {/* Work */}
+        <section className="p-4 m-4 sm:m-6 lg:mx-8 lg:m-4">
+          <h2 className="text-xl font-bold leading-tight sm:text-2xl">Work</h2>
+          <WorkCards />
         </section>
 
         {/* Projects */}

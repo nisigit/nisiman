@@ -56,12 +56,13 @@ const projects: Project[] = [
 
 export default function ProjectCards() {
   return (
-    <div className="my-2 grid grid-cols-1 lg:grid-cols-2 gap-x-4 gap-y-2 m-auto">
+    <div className="my-2 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6 m-auto">
       {projects.map((project: Project) => (
         <Link
           key={project.title}
           href={project.link}
           className="cursor-pointer group"
+          target="_blank"
         >
           <div className="overflow-hidden shadow-lg rounded-xl">
             <div className="bg-gray-800 relative">
@@ -80,7 +81,7 @@ export default function ProjectCards() {
                 </p>
               </div>
             </div>
-            <div className="p-4 lg:h-[80px] bg-gray-700 text-sm flex flex-wrap">
+            <div className="px-4 py-2 lg:h-[60px] bg-gray-700 text-sm flex flex-wrap">
               {project.tools.map((tool, index) => (
                 <span key={index}>
                   {<span className="text-gray-300 mx-1">•</span>}
