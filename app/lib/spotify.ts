@@ -17,13 +17,8 @@ const getAccessToken = async () => {
     }),
   });
 
-  if (response.status === 200) {
-    console.log("got access token successfully");
-  }
-
   return response.json();
 };
-
 
 export const topTracks = async () => {
   const { access_token } = await getAccessToken();
@@ -31,6 +26,46 @@ export const topTracks = async () => {
   const url = new URL("https://api.spotify.com/v1/me/top/tracks");
   const params = { limit: "5" };
   url.search = new URLSearchParams(params).toString();
+
+  return fetch(url.toString(), {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+};
+
+export const topArtists = async () => {
+  const { access_token } = await getAccessToken();
+
+  const url = new URL("https://api.spotify.com/v1/me/top/artists");
+  const params = { limit: "5" };
+  url.search = new URLSearchParams(params).toString();
+
+  return fetch(url.toString(), {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+};
+
+export const recentTracks = async () => {
+  const { access_token } = await getAccessToken();
+
+  const url = new URL("https://api.spotify.com/v1/me/player/recently-played");
+  const params = { limit: "5" };
+  url.search = new URLSearchParams(params).toString();
+
+  return fetch(url.toString(), {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+};
+
+export const currentlyPlaying = async () => {
+  const { access_token } = await getAccessToken();
+
+  const url = new URL("https://api.spotify.com/v1/me/player/currently-playing");
 
   return fetch(url.toString(), {
     headers: {
