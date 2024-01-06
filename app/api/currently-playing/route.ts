@@ -4,7 +4,7 @@ export async function GET(_req: Request, res: any) {
   const response = await currentlyPlaying();
   const song = await response.json();
 
-  if (response.status === 204 || response.status > 400) {
+  if (response.status === 204 || response.status > 400 || !song) {
     return Response.json({ isPlaying: false }, { status: 200 });
   }
 
@@ -18,12 +18,14 @@ export async function GET(_req: Request, res: any) {
   const album = song.item.album.name;
   const songUrl = song.item.external_urls.spotify;
 
-  return Response.json({
-    status: 200,
-    album,
-    artist,
-    isPlaying,
-    songUrl,
-    title,
-  });
+  return Response.json(
+    {
+      album,
+      artist,
+      isPlaying,
+      songUrl,
+      title,
+    },
+    { status: 200 }
+  );
 }
