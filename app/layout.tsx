@@ -8,6 +8,18 @@ export const metadata: Metadata = {
   title: "Nisiman",
   description:
     "Hi! I'm Nisiman, a final year Computer Science student at The University of Edinburgh.",
+  icons: {
+    icon: [
+      "favicon.ico?v=4",
+      "favicon-16x16.png",
+      "favicon-32x32.png",
+      "apple-touch-icon.png",
+      "android-chrome-192x192.png",
+      "android-chrome-512x512.png",
+      "site.webmanifest",
+      "safari-pinned-tab.svg",
+    ],
+  },
 };
 
 export default function RootLayout({

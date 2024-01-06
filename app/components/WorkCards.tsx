@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLink, FaCalendar } from "react-icons/fa";
+import { FaLink } from "react-icons/fa";
 
 interface WorkCardProps {
   head: string;

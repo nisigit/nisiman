@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
-import nisi from "@/public/nisi.jpeg";
-import har_app from "@/public/har-app.png";
-import venus_mars from "@/public/vnm.png";
-import eduplot_interface from "@/public/eduplot-interface.png";
-import dronz from "@/public/dronz.png";
+import har_app from "@/public/assets/har-app.png";
+import venus_mars from "@/public/assets/vnm.png";
+import eduplot_interface from "@/public/assets/eduplot-interface.png";
+import dronz from "@/public/assets/dronz.png";
 
 interface Project {
   title: string;

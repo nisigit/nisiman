@@ -1,5 +1,5 @@
 import Image from "next/image";
-import nisi from "@/public/nisi.jpeg";
+import nisi from "@/public/assets/nisi.jpeg";
 import Footer from "./components/Footer";
 import Socials from "./components/Socials";
 import ProjectCards from "./components/ProjectCards";
