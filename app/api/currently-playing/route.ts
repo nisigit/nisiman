@@ -1,17 +1,15 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { currentlyPlaying } from "../../lib/spotify";
+import { currentlyPlaying } from "@/app/lib/spotify";
 
-export async function GET(_req: any, res: any) {
+export async function GET(_req: Request, res: any) {
   const response = await currentlyPlaying();
-
-  if (response.status === 204 || response.status > 400) {
-    return Response.json({ status: 200, isPlaying: false });
-  }
-
   const song = await response.json();
 
+  if (response.status === 204 || response.status > 400) {
+    return Response.json({ isPlaying: false }, { status: 200 });
+  }
+
   if (song.item === null) {
-    return Response.json({ status: 200, isPlaying: false });
+    return Response.json({ isPlaying: false }, { status: 200 });
   }
 
   const isPlaying = song.is_playing;

@@ -15,7 +15,7 @@ interface Artist {
 
 const listLimit = 3;
 
-function TopSongs() {
+function Music() {
   const [topTracks, setTopTracks] = useState<Track[]>([]);
   const [recentTracks, setRecentTracks] = useState<Track[]>([]);
   const [topArtists, setTopArtists] = useState<Artist[]>([]);
@@ -26,13 +26,12 @@ function TopSongs() {
       fetch("/api/recent-tracks")
         .then((res) => res.json())
         .then((data) => {
-          const tracks: Track[] = data
-            .splice(0, listLimit)
-            .map((track: any) => ({
-              title: track.title,
-              artist: track.artist,
-              url: track.url,
-            }));
+          let tracks: Track[] = data.tracks;
+          tracks = tracks.splice(0, listLimit).map((track: any) => ({
+            title: track.title,
+            artist: track.artist,
+            url: track.url,
+          }));
           setRecentTracks(tracks);
         })
         .catch((err) => console.log(err));
@@ -42,14 +41,13 @@ function TopSongs() {
       fetch("/api/top-tracks")
         .then((res) => res.json())
         .then((data) => {
-          const tracks: Track[] = data
-            .splice(0, listLimit)
-            .map((track: any) => ({
-              title: track.title,
-              artist: track.artist,
-              url: track.url,
-              coverImage: track.coverImage,
-            }));
+          let tracks: Track[] = data.tracks;
+          tracks = tracks.splice(0, listLimit).map((track: any) => ({
+            title: track.title,
+            artist: track.artist,
+            url: track.url,
+            coverImage: track.coverImage,
+          }));
           setTopTracks(tracks);
         })
         .catch((err) => console.log(err));
@@ -59,7 +57,7 @@ function TopSongs() {
       fetch("/api/top-artists")
         .then((res) => res.json())
         .then((data) => {
-          const artists: Artist[] = data
+          const artists: Artist[] = data.artists
             .splice(0, listLimit + 1)
             .map((artist: any) => ({
               name: artist.name,
@@ -75,7 +73,6 @@ function TopSongs() {
       fetch("/api/currently-playing")
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
           if (data.isPlaying) {
             setCurrentTrack({
               title: data.title,
@@ -173,4 +170,4 @@ function TopSongs() {
   );
 }
 
-export default TopSongs;
+export default Music;

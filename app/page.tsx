@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Socials from "./components/Socials";
 import ProjectCards from "./components/ProjectCards";
 import WorkCards from "./components/WorkCards";
-import TopSongs from "./components/Music";
+import Music from "./components/Music";
 
 export default function Home() {
   return (
@@ -72,7 +72,7 @@ export default function Home() {
         {/* Music */}
         <section className="p-4 m-4 sm:m-6 lg:mx-8 lg:my-4">
           <h2 className="text-xl font-bold leading-tight sm:text-2xl">Music</h2>
-          <TopSongs />
+          <Music />
         </section>
 
         {/* Contact */}
