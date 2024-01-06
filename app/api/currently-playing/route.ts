@@ -1,6 +1,6 @@
 import { currentlyPlaying } from "@/app/lib/spotify";
 
-export async function GET(_req: Request, res: any) {
+export async function GET() {
   const response = await currentlyPlaying();
   const song = await response.json();
 
