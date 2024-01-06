@@ -2,6 +2,10 @@ import { currentlyPlaying } from "@/app/lib/spotify";
 
 export async function GET() {
   const response = await currentlyPlaying();
+  if (!response || !response.ok) {
+    return Response.json({ isPlaying: false }, { status: 200 });
+  }
+
   const song = await response.json();
 
   if (response.status === 204 || response.status > 400 || !song) {
