@@ -5,7 +5,7 @@ import Socials from "./components/Socials";
 import ProjectCards from "./components/ProjectCards";
 import WorkCards from "./components/WorkCards";
 import Music from "./components/Music";
-import dp from "@/public/favicon.ico";
+import dp from "@/public/favicon-32x32.png";
 
 export default function Home() {
   return (
