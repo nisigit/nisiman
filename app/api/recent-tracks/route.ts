@@ -1,6 +1,6 @@
 import { recentTracks } from "@/app/lib/spotify";
 
-export async function GET(_req: Request, res: Response) {
+export async function GET() {
   const response = await recentTracks();
   const data = await response.json();
 
@@ -14,7 +14,7 @@ export async function GET(_req: Request, res: Response) {
       ?.map((_artist: any) => _artist.name)
       .splice(0, 2)
       .join(", ");
-    const url = track?.context?.external_urls?.spotify;
+    const url = track?.track?.external_urls?.spotify;
 
     return {
       title,
