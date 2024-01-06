@@ -98,10 +98,10 @@ function TopSongs() {
   return (
     <>
       <div className="w-full flex mt-2">
-        <div className="p-2">
-          <FaSpotify classname="inline-block" />
+        <div className="mr-2">
+          <FaSpotify className="inline-block text-green-500 align-middle text-2xl" />
         </div>
-        <div className="align-text-bottom p-1">
+        <div className="align-text-bottom">
           <p className="font-semibold">
             {"Spotify - "}
             {currentTrack ? (
