@@ -37,17 +37,31 @@ const socialButtons: SocialButton[] = [
 
 export default function Socials() {
   return (
-    <div className="my-6 flex-wrap flex-row">
-      {socialButtons.map((button, index) => (
-        <a href={button.href} key={index}>
-          <button
-            className={`${button.color} mr-4 mb-2 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded transform transition-transform duration-200 hover:-translate-y-1`}
-          >
-            <button.Icon className="w-5 h-5 fill-current" />
-            <span>{button.text}</span>
-          </button>
+    <>
+      <p className="mt-2 w-4/5">
+        The best way to reach me is to send me an email at{" "}
+        <a className="underline text-blue-600" href="mailto:nisimanbhardwaj29@gmail.com">
+          nisimanbhardwaj29@gmail.com
         </a>
-      ))}
-    </div>
+        . Alternatively, you can connect with me on any of my socials:{" "}
+      </p>
+      <div className="my-6 lg:my-3 flex-wrap flex-row">
+        {socialButtons.map((button, index) => (
+          <a
+            href={button.href}
+            key={index}
+            target="_black"
+            rel="noopener noreferrer"
+          >
+            <button
+              className={`${button.color} bg-opacity-80 mr-4 mb-2 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded transform transition-transform duration-200 hover:-translate-y-1`}
+            >
+              <button.Icon className="w-5 h-5 fill-current" />
+              <span>{button.text}</span>
+            </button>
+          </a>
+        ))}
+      </div>
+    </>
   );
 }

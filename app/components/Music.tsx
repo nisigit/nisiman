@@ -77,7 +77,7 @@ function Music() {
             setCurrentTrack({
               title: data.title,
               artist: data.artist,
-              url: data.url,
+              url: data.songUrl,
             });
           } else {
             setCurrentTrack(null);
@@ -94,17 +94,26 @@ function Music() {
 
   return (
     <>
-      <div className="w-full flex mt-2">
+      <div className="w-full flex mt-2 text-sm text-slate-200">
         <div className="mr-2">
-          <FaSpotify className="inline-block text-green-500 align-middle text-2xl" />
+          <FaSpotify className="inline-block text-green-500 align-middle text-xl" />
         </div>
         <div className="align-text-bottom">
-          <p className="font-semibold">
-            {"Spotify - "}
+          <p className="">
+            {"Spotify — "}
             {currentTrack ? (
-              <a href={currentTrack.url}>
-                {`Playing ${currentTrack?.title} by ${currentTrack?.artist}`}
-              </a>
+              <>
+                <span>Playing </span>
+                <a
+                  href={currentTrack.url}
+                  className="underline"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <span className="font-semibold">{currentTrack.title}</span> by{" "}
+                  <span className="font-semibold">{currentTrack.artist}</span>
+                </a>
+              </>
             ) : (
               "Not playing"
             )}
@@ -118,7 +127,7 @@ function Music() {
           {recentTracks.map((track: Track, index) => (
             <a key={index} href={track.url} target="_blank" rel="noreferrer">
               <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
-                <h1 className="self-center text-xl select-none mr-2">
+                <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>
                 <div className="transition-transform duration-500 group-hover:translate-x-2">
@@ -136,7 +145,7 @@ function Music() {
           {topTracks.map((track: Track, index) => (
             <a key={index} href={track.url} target="_blank" rel="noreferrer">
               <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
-                <h1 className="self-center text-xl select-none mr-2">
+                <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>
                 <div className="transition-transform duration-500 group-hover:translate-x-2">
@@ -154,7 +163,7 @@ function Music() {
           {topArtists.map((artist: Artist, index) => (
             <a key={index} href={artist.url} target="_blank" rel="noreferrer">
               <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
-                <h1 className="self-center text-xl select-none mr-2">
+                <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>
                 <div className="transition-transform duration-500 group-hover:translate-x-2">

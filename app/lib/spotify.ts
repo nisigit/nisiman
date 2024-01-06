@@ -1,4 +1,3 @@
-import { time } from "console";
 import querystring from "querystring";
 
 const getAccessToken = async () => {
@@ -25,7 +24,10 @@ export const topTracks = async () => {
   const { access_token } = await getAccessToken();
 
   const url = new URL("https://api.spotify.com/v1/me/top/tracks");
-  const params = { limit: "5", };
+  const params = {
+    time_range: "short_term",
+    limit: "5",
+  };
   url.search = new URLSearchParams(params).toString();
 
   return fetch(url.toString(), {
@@ -39,7 +41,10 @@ export const topArtists = async () => {
   const { access_token } = await getAccessToken();
 
   const url = new URL("https://api.spotify.com/v1/me/top/artists");
-  const params = { limit: "5" };
+  const params = {
+    time_range: "short_term",
+    limit: "5",
+  };
   url.search = new URLSearchParams(params).toString();
 
   return fetch(url.toString(), {

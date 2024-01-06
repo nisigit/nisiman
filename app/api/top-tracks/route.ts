@@ -8,11 +8,13 @@ export async function GET() {
     return Response.json({}, { status: response.status });
   }
 
-  const tracks = items.map((track: any) => ({
-    title: track.name,
-    artist: track.artists.map((_artist: any) => _artist.name).join(", "),
-    url: track.external_urls.spotify,
-  }));
+  const tracks = items
+    .filter((track: any) => !track.name.includes("Abrar"))
+    .map((track: any) => ({
+      title: track.name,
+      artist: track.artists.map((_artist: any) => _artist.name).join(", "),
+      url: track.external_urls.spotify,
+    }));
 
   return Response.json({ tracks: tracks }, { status: 200 });
 }
