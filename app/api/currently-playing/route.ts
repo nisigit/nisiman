@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import { currentlyPlaying } from "../../lib/spotify";
 
-export async function GET(_req: NextApiRequest, res: NextApiResponse) {
+export async function GET(_req: any, res: any) {
   const response = await currentlyPlaying();
 
   if (response.status === 204 || response.status > 400) {
