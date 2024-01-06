@@ -119,7 +119,7 @@ function TopSongs() {
         <div className="w-full">
           <h1 className="text-xl my-1">Recently Played</h1>
           {recentTracks.map((track: Track, index) => (
-            <a key={index} href={track.url} target="_blank">
+            <a key={index} href={track.url} target="_blank" rel="noreferrer">
               <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
                 <h1 className="self-center text-xl select-none mr-2">
                   {index + 1}
@@ -137,7 +137,7 @@ function TopSongs() {
         <div className="w-full">
           <h1 className="text-xl my-1">Top Tracks (Month)</h1>
           {topTracks.map((track: Track, index) => (
-            <a key={index} href={track.url} target="_blank">
+            <a key={index} href={track.url} target="_blank" rel="noreferrer">
               <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
                 <h1 className="self-center text-xl select-none mr-2">
                   {index + 1}
@@ -155,7 +155,7 @@ function TopSongs() {
         <div className="w-full">
           <h1 className="text-xl my-1">Top Artists (Month)</h1>
           {topArtists.map((artist: Artist, index) => (
-            <a key={index} href={artist.url} target="_blank">
+            <a key={index} href={artist.url} target="_blank" rel="noreferrer">
               <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
                 <h1 className="self-center text-xl select-none mr-2">
                   {index + 1}

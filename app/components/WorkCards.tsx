@@ -72,6 +72,7 @@ export default function WorkCards() {
           <div className="w-full text-md flex flex-row justify-between align-center">
             <a
               target="_blank"
+              rel="noreferrer"
               href={card.link}
               className="font-bold inline-block xl:w-3/5 mr-0.5"
             >

@@ -63,6 +63,7 @@ export default function ProjectCards() {
           href={project.link}
           className="cursor-pointer group"
           target="_blank"
+          rel="noreferrer"
         >
           <div className="overflow-hidden shadow-lg rounded-xl">
             <div className="bg-gray-800 relative">
