@@ -1,6 +1,10 @@
-"use client";
-import React, { useEffect, useState } from "react";
 import { FaSpotify } from "react-icons/fa";
+import {
+  getCurrentlyPlaying,
+  getRecentTracks,
+  getTopArtists,
+  getTopTracks,
+} from "../lib/spotify";
 
 interface Track {
   title: string;
@@ -15,82 +19,11 @@ interface Artist {
 
 const listLimit = 3;
 
-function Music() {
-  const [topTracks, setTopTracks] = useState<Track[]>([]);
-  const [recentTracks, setRecentTracks] = useState<Track[]>([]);
-  const [topArtists, setTopArtists] = useState<Artist[]>([]);
-  const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
-
-  useEffect(() => {
-    function fetchRecentTracks() {
-      fetch("/api/recent-tracks")
-        .then((res) => res.json())
-        .then((data) => {
-          let tracks: Track[] = data.tracks;
-          tracks = tracks.splice(0, listLimit).map((track: any) => ({
-            title: track.title,
-            artist: track.artist,
-            url: track.url,
-          }));
-          setRecentTracks(tracks);
-        })
-        .catch((err) => console.log(err));
-    }
-
-    function fetchTopTracks() {
-      fetch("/api/top-tracks")
-        .then((res) => res.json())
-        .then((data) => {
-          let tracks: Track[] = data.tracks;
-          tracks = tracks.splice(0, listLimit).map((track: any) => ({
-            title: track.title,
-            artist: track.artist,
-            url: track.url,
-            coverImage: track.coverImage,
-          }));
-          setTopTracks(tracks);
-        })
-        .catch((err) => console.log(err));
-    }
-
-    function fetchTopArtists() {
-      fetch("/api/top-artists")
-        .then((res) => res.json())
-        .then((data) => {
-          const artists: Artist[] = data.artists
-            .splice(0, listLimit + 1)
-            .map((artist: any) => ({
-              name: artist.name,
-              url: artist.url,
-              coverImage: artist.coverImage,
-            }));
-          setTopArtists(artists);
-        })
-        .catch((err) => console.log(err));
-    }
-
-    function fetchCurrentTrack() {
-      fetch("/api/currently-playing")
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.isPlaying) {
-            setCurrentTrack({
-              title: data.title,
-              artist: data.artist,
-              url: data.songUrl,
-            });
-          } else {
-            setCurrentTrack(null);
-          }
-        })
-        .catch((err) => console.log(err));
-    }
-
-    fetchTopTracks();
-    fetchRecentTracks();
-    fetchTopArtists();
-    fetchCurrentTrack();
-  }, []);
+export default async function Music() {
+  const topTracks: Track[] = await getTopTracks(listLimit);
+  const topArtists: Artist[] = await getTopArtists(listLimit + 1);
+  const recentTracks: Track[] = await getRecentTracks(listLimit);
+  const currentTrack: Track | null = await getCurrentlyPlaying();
 
   return (
     <>
@@ -178,5 +111,3 @@ function Music() {
     </>
   );
 }
-
-export default Music;
