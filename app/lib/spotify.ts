@@ -135,7 +135,7 @@ export const getCurrentlyPlaying = async () => {
     cache: "no-store",
   });
 
-  if (response.status === 204 || response.status > -400) {
+  if (response.status === 204 || response.status > 400) {
     return null;
   }
 
