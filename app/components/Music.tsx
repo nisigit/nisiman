@@ -20,10 +20,31 @@ interface Artist {
 const listLimit = 3;
 
 export default async function Music() {
-  const topTracks: Track[] = await getTopTracks(listLimit);
-  const topArtists: Artist[] = await getTopArtists(listLimit + 1);
-  const recentTracks: Track[] = await getRecentTracks(listLimit);
-  const currentTrack: Track | null = await getCurrentlyPlaying();
+  const results = await Promise.allSettled([
+    getTopTracks(listLimit).catch((error) => {
+      console.error("Error fetching top tracks:", error);
+      return [];
+    }),
+    getRecentTracks(listLimit).catch((error) => {
+      console.error("Error fetching recent tracks:", error);
+      return [];
+    }),
+    getTopArtists(listLimit + 1).catch((error) => {
+      console.error("Error fetching top artists:", error);
+      return [];
+    }),
+    getCurrentlyPlaying().catch((error) => {
+      console.error("Error fetching currently playing track:", error);
+      return null;
+    }),
+  ]);
+
+  const topTracks = results[0].status === "fulfilled" ? results[0].value : [];
+  const recentTracks =
+    results[1].status === "fulfilled" ? results[1].value : [];
+  const topArtists = results[2].status === "fulfilled" ? results[2].value : [];
+  const currentTrack =
+    results[3].status === "fulfilled" ? results[3].value : null;
 
   return (
     <>
@@ -39,7 +60,7 @@ export default async function Music() {
                 <span>Listening to </span>
                 <a
                   href={currentTrack.url}
-                  className="underline"
+                  className="underline text-green-500 hover:text-green-600 transition duration-200"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -56,10 +77,10 @@ export default async function Music() {
       <div className="mt-3 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
         {/* Recently played */}
         <div className="w-full">
-          <h1 className="text-xl my-1">Recently Played</h1>
-          {recentTracks.map((track: Track, index) => (
+          <h1 className="text-xl my-1 text-green-600">Recently Played</h1>
+          {recentTracks.map((track: Track, index: number) => (
             <a key={index} href={track.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
+              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
                 <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>
@@ -74,10 +95,10 @@ export default async function Music() {
 
         {/* Top Songs */}
         <div className="w-full">
-          <h1 className="text-xl my-1">Top Tracks (Month)</h1>
-          {topTracks.map((track: Track, index) => (
+          <h1 className="text-xl my-1 text-green-600">Top Tracks (Month)</h1>
+          {topTracks.map((track: Track, index: number) => (
             <a key={index} href={track.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
+              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
                 <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>
@@ -92,10 +113,10 @@ export default async function Music() {
 
         {/* Top Artists */}
         <div className="w-full">
-          <h1 className="text-xl my-1">Top Artists (Month)</h1>
-          {topArtists.map((artist: Artist, index) => (
+          <h1 className="text-xl my-1 text-green-600">Top Artists (Month)</h1>
+          {topArtists.map((artist: Artist, index: number) => (
             <a key={index} href={artist.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
+              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
                 <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>

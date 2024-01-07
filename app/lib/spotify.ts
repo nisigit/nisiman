@@ -15,7 +15,13 @@ const getAccessToken = async () => {
       grant_type: "refresh_token",
       refresh_token,
     }),
+    cache: "no-store",
   });
+
+  if (!response.ok) {
+    const message = `An error has occured: ${response.status}`;
+    throw new Error(message);
+  }
 
   return response.json();
 };
@@ -30,13 +36,14 @@ export const getRecentTracks = async (listLimit: Number) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: "no-store",
   });
 
   const data = await response.json();
 
   return data.items.slice(0, listLimit).map((item: any) => {
     return {
-      artist: item.track.artists.map((artist: any) => artist.name).join(", "),
+      artist: item.track.artists.slice(0, 2).map((artist: any) => artist.name).join(" • "),
       title: item.track.name,
       image: item.track.album.images[0].url,
       url: item.track.external_urls.spotify,
@@ -58,7 +65,13 @@ export const getTopTracks = async (listLimit: Number) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: "no-store",
   });
+
+  if (!response.ok) {
+    const message = `An error has occured: ${response.status}`;
+    throw new Error(message);
+  }
 
   const data = await response.json();
 
@@ -88,7 +101,13 @@ export const getTopArtists = async (listLimit: Number) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: "no-store",
   });
+
+  if (!response.ok) {
+    const message = `An error has occured: ${response.status}`;
+    throw new Error(message);
+  }
 
   const data = await response.json();
 
@@ -110,10 +129,12 @@ export const getCurrentlyPlaying = async () => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: "no-store",
   });
 
-  if (response.status === 204 || response.status > 400) {
-    return null;
+  if (!response.ok) {
+    const message = `An error has occured: ${response.status}`;
+    throw new Error(message);
   }
 
   const data = await response.json();
