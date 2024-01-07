@@ -15,12 +15,43 @@ const getAccessToken = async () => {
       grant_type: "refresh_token",
       refresh_token,
     }),
+    cache: "no-store",
   });
+
+  if (!response.ok) {
+    const message = `An error has occured: ${response.status}`;
+    throw new Error(message);
+  }
 
   return response.json();
 };
 
-export const topTracks = async () => {
+export const getRecentTracks = async (listLimit: Number) => {
+  const { access_token } = await getAccessToken();
+  const url = new URL("https://api.spotify.com/v1/me/player/recently-played");
+  const params = { limit: "5" };
+  url.search = new URLSearchParams(params).toString();
+
+  const response = await fetch(url.toString(), {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+    cache: "no-store",
+  });
+
+  const data = await response.json();
+
+  return data.items.slice(0, listLimit).map((item: any) => {
+    return {
+      artist: item.track.artists.slice(0, 2).map((artist: any) => artist.name).join(", "),
+      title: item.track.name,
+      image: item.track.album.images[0].url,
+      url: item.track.external_urls.spotify,
+    };
+  });
+};
+
+export const getTopTracks = async (listLimit: Number) => {
   const { access_token } = await getAccessToken();
 
   const url = new URL("https://api.spotify.com/v1/me/top/tracks");
@@ -30,14 +61,33 @@ export const topTracks = async () => {
   };
   url.search = new URLSearchParams(params).toString();
 
-  return fetch(url.toString(), {
+  const response = await fetch(url.toString(), {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: "no-store",
   });
+
+  if (!response.ok) {
+    const message = `An error has occured: ${response.status}`;
+    throw new Error(message);
+  }
+
+  const data = await response.json();
+
+  return data.items
+    .filter((track: any) => !track.name.includes("Abrar"))
+    .slice(0, listLimit)
+    .map((track: any) => {
+      return {
+        title: track.name,
+        artist: track.artists.map((_artist: any) => _artist.name).join(", "),
+        url: track.external_urls.spotify,
+      };
+    });
 };
 
-export const topArtists = async () => {
+export const getTopArtists = async (listLimit: Number) => {
   const { access_token } = await getAccessToken();
 
   const url = new URL("https://api.spotify.com/v1/me/top/artists");
@@ -47,35 +97,55 @@ export const topArtists = async () => {
   };
   url.search = new URLSearchParams(params).toString();
 
-  return fetch(url.toString(), {
+  const response = await fetch(url.toString(), {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    const message = `An error has occured: ${response.status}`;
+    throw new Error(message);
+  }
+
+  const data = await response.json();
+
+  return data.items.slice(0, listLimit).map((artist: any) => {
+    return {
+      name: artist.name,
+      image: artist.images[0].url,
+      url: artist.external_urls.spotify,
+    };
   });
 };
 
-export const recentTracks = async () => {
-  const { access_token } = await getAccessToken();
-
-  const url = new URL("https://api.spotify.com/v1/me/player/recently-played");
-  const params = { limit: "5" };
-  url.search = new URLSearchParams(params).toString();
-
-  return fetch(url.toString(), {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-    },
-  });
-};
-
-export const currentlyPlaying = async () => {
+export const getCurrentlyPlaying = async () => {
   const { access_token } = await getAccessToken();
 
   const url = new URL("https://api.spotify.com/v1/me/player/currently-playing");
 
-  return fetch(url.toString(), {
+  const response = await fetch(url.toString(), {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    cache: "no-store",
   });
+
+  if (!response.ok) {
+    const message = `An error has occured: ${response.status}`;
+    throw new Error(message);
+  }
+
+  const data = await response.json();
+
+  if (!data.is_playing) {
+    return null;
+  }
+
+  return {
+    artist: data.item.artists.map((artist: any) => artist.name).join(", "),
+    title: data.item.name,
+    url: data.item.external_urls.spotify,
+  };
 };

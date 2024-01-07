@@ -1,6 +1,10 @@
-"use client";
-import React, { useEffect, useState } from "react";
 import { FaSpotify } from "react-icons/fa";
+import {
+  getCurrentlyPlaying,
+  getRecentTracks,
+  getTopArtists,
+  getTopTracks,
+} from "../lib/spotify";
 
 interface Track {
   title: string;
@@ -15,82 +19,32 @@ interface Artist {
 
 const listLimit = 3;
 
-function Music() {
-  const [topTracks, setTopTracks] = useState<Track[]>([]);
-  const [recentTracks, setRecentTracks] = useState<Track[]>([]);
-  const [topArtists, setTopArtists] = useState<Artist[]>([]);
-  const [currentTrack, setCurrentTrack] = useState<Track | null>(null);
+export default async function Music() {
+  const results = await Promise.allSettled([
+    getTopTracks(listLimit).catch((error) => {
+      console.error("Error fetching top tracks:", error);
+      return [];
+    }),
+    getRecentTracks(listLimit).catch((error) => {
+      console.error("Error fetching recent tracks:", error);
+      return [];
+    }),
+    getTopArtists(listLimit + 1).catch((error) => {
+      console.error("Error fetching top artists:", error);
+      return [];
+    }),
+    getCurrentlyPlaying().catch((error) => {
+      console.error("Error fetching currently playing track:", error);
+      return null;
+    }),
+  ]);
 
-  useEffect(() => {
-    function fetchRecentTracks() {
-      fetch("/api/recent-tracks")
-        .then((res) => res.json())
-        .then((data) => {
-          let tracks: Track[] = data.tracks;
-          tracks = tracks.splice(0, listLimit).map((track: any) => ({
-            title: track.title,
-            artist: track.artist,
-            url: track.url,
-          }));
-          setRecentTracks(tracks);
-        })
-        .catch((err) => console.log(err));
-    }
-
-    function fetchTopTracks() {
-      fetch("/api/top-tracks")
-        .then((res) => res.json())
-        .then((data) => {
-          let tracks: Track[] = data.tracks;
-          tracks = tracks.splice(0, listLimit).map((track: any) => ({
-            title: track.title,
-            artist: track.artist,
-            url: track.url,
-            coverImage: track.coverImage,
-          }));
-          setTopTracks(tracks);
-        })
-        .catch((err) => console.log(err));
-    }
-
-    function fetchTopArtists() {
-      fetch("/api/top-artists")
-        .then((res) => res.json())
-        .then((data) => {
-          const artists: Artist[] = data.artists
-            .splice(0, listLimit + 1)
-            .map((artist: any) => ({
-              name: artist.name,
-              url: artist.url,
-              coverImage: artist.coverImage,
-            }));
-          setTopArtists(artists);
-        })
-        .catch((err) => console.log(err));
-    }
-
-    function fetchCurrentTrack() {
-      fetch("/api/currently-playing")
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.isPlaying) {
-            setCurrentTrack({
-              title: data.title,
-              artist: data.artist,
-              url: data.songUrl,
-            });
-          } else {
-            setCurrentTrack(null);
-          }
-        })
-        .catch((err) => console.log(err));
-    }
-
-    fetchTopTracks();
-    fetchRecentTracks();
-    fetchTopArtists();
-    fetchCurrentTrack();
-  }, []);
+  const topTracks = results[0].status === "fulfilled" ? results[0].value : [];
+  const recentTracks =
+    results[1].status === "fulfilled" ? results[1].value : [];
+  const topArtists = results[2].status === "fulfilled" ? results[2].value : [];
+  const currentTrack =
+    results[3].status === "fulfilled" ? results[3].value : null;
 
   return (
     <>
@@ -103,10 +57,10 @@ function Music() {
             {"Spotify — "}
             {currentTrack ? (
               <>
-                <span>Playing </span>
+                <span>Listening to </span>
                 <a
                   href={currentTrack.url}
-                  className="underline"
+                  className="underline text-green-500 hover:text-green-600 transition duration-200"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -123,10 +77,10 @@ function Music() {
       <div className="mt-3 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
         {/* Recently played */}
         <div className="w-full">
-          <h1 className="text-xl my-1">Recently Played</h1>
-          {recentTracks.map((track: Track, index) => (
+          <h1 className="text-xl mt-1 text-green-600">Recently Played</h1>
+          {recentTracks.map((track: Track, index: number) => (
             <a key={index} href={track.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
+              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
                 <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>
@@ -141,10 +95,10 @@ function Music() {
 
         {/* Top Songs */}
         <div className="w-full">
-          <h1 className="text-xl my-1">Top Tracks (Month)</h1>
-          {topTracks.map((track: Track, index) => (
+          <h1 className="text-xl mt-1 text-green-600">Top Tracks (Month)</h1>
+          {topTracks.map((track: Track, index: number) => (
             <a key={index} href={track.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
+              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
                 <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>
@@ -159,10 +113,10 @@ function Music() {
 
         {/* Top Artists */}
         <div className="w-full">
-          <h1 className="text-xl my-1">Top Artists (Month)</h1>
-          {topArtists.map((artist: Artist, index) => (
+          <h1 className="text-xl mt-1 text-green-600">Top Artists (Month)</h1>
+          {topArtists.map((artist: Artist, index: number) => (
             <a key={index} href={artist.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-300 hover:bg-opacity-90 hover:text-green-900">
+              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
                 <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>
@@ -178,5 +132,3 @@ function Music() {
     </>
   );
 }
-
-export default Music;
