@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@netlify/functions": "^2.4.1",
+    "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.2",
     "framer-motion": "^10.17.6",
     "isomorphic-unfetch": "^4.0.2",
     "next": "14.0.4",
