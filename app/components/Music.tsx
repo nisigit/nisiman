@@ -77,7 +77,7 @@ export default async function Music() {
       <div className="mt-3 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
         {/* Recently played */}
         <div className="w-full">
-          <h1 className="text-xl my-1 text-green-600">Recently Played</h1>
+          <h1 className="text-xl mt-1 text-green-600">Recently Played</h1>
           {recentTracks.map((track: Track, index: number) => (
             <a key={index} href={track.url} target="_blank" rel="noreferrer">
               <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
@@ -95,7 +95,7 @@ export default async function Music() {
 
         {/* Top Songs */}
         <div className="w-full">
-          <h1 className="text-xl my-1 text-green-600">Top Tracks (Month)</h1>
+          <h1 className="text-xl mt-1 text-green-600">Top Tracks (Month)</h1>
           {topTracks.map((track: Track, index: number) => (
             <a key={index} href={track.url} target="_blank" rel="noreferrer">
               <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
@@ -113,7 +113,7 @@ export default async function Music() {
 
         {/* Top Artists */}
         <div className="w-full">
-          <h1 className="text-xl my-1 text-green-600">Top Artists (Month)</h1>
+          <h1 className="text-xl mt-1 text-green-600">Top Artists (Month)</h1>
           {topArtists.map((artist: Artist, index: number) => (
             <a key={index} href={artist.url} target="_blank" rel="noreferrer">
               <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">

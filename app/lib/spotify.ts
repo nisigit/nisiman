@@ -43,7 +43,7 @@ export const getRecentTracks = async (listLimit: Number) => {
 
   return data.items.slice(0, listLimit).map((item: any) => {
     return {
-      artist: item.track.artists.slice(0, 2).map((artist: any) => artist.name).join(" • "),
+      artist: item.track.artists.slice(0, 2).map((artist: any) => artist.name).join(", "),
       title: item.track.name,
       image: item.track.album.images[0].url,
       url: item.track.external_urls.spotify,
