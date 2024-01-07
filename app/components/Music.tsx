@@ -36,7 +36,7 @@ export default async function Music() {
             {"Spotify — "}
             {currentTrack ? (
               <>
-                <span>Playing </span>
+                <span>Listening to </span>
                 <a
                   href={currentTrack.url}
                   className="underline"

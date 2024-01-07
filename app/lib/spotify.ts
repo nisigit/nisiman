@@ -112,6 +112,10 @@ export const getCurrentlyPlaying = async () => {
     },
   });
 
+  if (response.status === 204 || response.status > 400) {
+    return null;
+  }
+
   const data = await response.json();
 
   if (!data.is_playing) {
@@ -121,7 +125,6 @@ export const getCurrentlyPlaying = async () => {
   return {
     artist: data.item.artists.map((artist: any) => artist.name).join(", "),
     title: data.item.name,
-    image: data.item.album.images[0].url,
     url: data.item.external_urls.spotify,
   };
 };
