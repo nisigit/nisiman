@@ -22,13 +22,13 @@ const socialButtons: SocialButton[] = [
     href: "https://www.linkedin.com/in/nisiman",
   },
   {
-    color: "bg-pink-600",
+    color: "bg-gradient-to-br from-pink-700 to-purple-600",
     Icon: FaInstagram,
     text: "Instagram",
     href: "https://www.instagram.com/nisigrit",
   },
   {
-    color: "bg-green-500",
+    color: "bg-green-600",
     Icon: FaSpotify,
     text: "Spotify",
     href: "https://open.spotify.com/user/nd1vzwwybrvjr7e7q9s52qwsn",
@@ -38,14 +38,7 @@ const socialButtons: SocialButton[] = [
 export default function Socials() {
   return (
     <>
-      <p className="mt-2 w-4/5">
-        The best way to reach me is to send me an email at{" "}
-        <a className="underline text-blue-600" href="mailto:nisimanbhardwaj29@gmail.com">
-          nisimanbhardwaj29@gmail.com
-        </a>
-        . Alternatively, you can connect with me on any of my socials:{" "}
-      </p>
-      <div className="my-6 lg:my-3 flex-wrap flex-row">
+      <div className="mt-6 lg:my-3 flex-wrap flex-row">
         {socialButtons.map((button, index) => (
           <a
             href={button.href}
@@ -54,7 +47,7 @@ export default function Socials() {
             rel="noopener noreferrer"
           >
             <button
-              className={`${button.color} bg-opacity-80 mr-4 mb-2 p-2 font-semibold text-white inline-flex items-center space-x-2 rounded transform transition-transform duration-200 hover:-translate-y-1`}
+              className={`${button.color} bg-opacity-90 mr-4 mb-2 p-2 text-white inline-flex items-center space-x-2 rounded transform transition-transform duration-200 hover:-translate-y-1`}
             >
               <button.Icon className="w-5 h-5 fill-current" />
               <span>{button.text}</span>

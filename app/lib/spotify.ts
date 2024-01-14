@@ -68,7 +68,6 @@ export const getTopTracks = async (listLimit: Number) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: "no-store",
   });
 
   if (!response.ok) {
@@ -104,7 +103,6 @@ export const getTopArtists = async (listLimit: Number) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
-    cache: "no-store",
   });
 
   if (!response.ok) {

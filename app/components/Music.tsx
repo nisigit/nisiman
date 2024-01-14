@@ -1,21 +1,11 @@
+import { Artist, Track } from "@/interfaces/music";
 import { FaSpotify } from "react-icons/fa";
 import {
   getCurrentlyPlaying,
   getRecentTracks,
   getTopArtists,
   getTopTracks,
-} from "../lib/spotify";
-
-interface Track {
-  title: string;
-  artist: string;
-  url: string;
-}
-
-interface Artist {
-  name: string;
-  url: string;
-}
+} from "@/app/lib/spotify";
 
 const listLimit = 3;
 
@@ -74,7 +64,7 @@ export default async function Music() {
           </p>
         </div>
       </div>
-      <div className="mt-3 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3">
+      <div className="mt-3 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
         {/* Recently played */}
         <div className="w-full">
           <h1 className="text-xl mt-1 text-green-600">Recently Played</h1>
