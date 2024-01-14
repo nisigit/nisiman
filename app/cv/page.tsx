@@ -12,10 +12,10 @@ const Content: React.FC<ContentProps> = ({ title, items }) => {
         {items.map((item, index) => {
           return (
             <div className="flex" key={index}>
-              <div className="mr-2 text-xs md:text-sm md:mr-8 max-w-[150px] w-full text-slate-200 dark:text-slate-200">
+              <div className="text-xs flex-shrink-0 md:text-sm md:mr-8 w-[100px] md:w-[150px] text-slate-200 dark:text-slate-200">
                 {item.date}
               </div>
-              <div className="flex flex-col flex-1">
+              <div className="flex flex-col flex-2">
                 <h4 className="text-md md:text-lg font-bold">{item.title}</h4>
                 <p className="text-sm md:text-md dark:text-gray-400">
                   {item.subTitle}
