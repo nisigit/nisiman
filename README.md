@@ -20,6 +20,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## To Do
 
+- [ ] Light/Dark theme
 - [ ] Integrate blog
 - [ ] Spotify add to queue
 
