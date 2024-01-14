@@ -47,9 +47,6 @@ export default function Navbar() {
             <Link href={link.link}>{link.name}</Link>
           </li>
         ))}
-        <li>
-          <ThemeSwitch />
-        </li>
       </ul>
 
       <div
@@ -77,6 +74,9 @@ export default function Navbar() {
           ))}
         </ul>
       )}
+      <div>
+        <ThemeSwitch />
+      </div>
     </div>
   );
 }
