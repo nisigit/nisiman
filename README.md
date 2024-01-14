@@ -18,6 +18,11 @@ The website is also a real-time indicator of what song I'm currently playing on 
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## To Do
+
+- [ ] Integrate blog
+- [ ] Spotify add to queue
+
 ## Analytics
 
 Here are the recent desktop and mobile analytics for the website from Vercel.
