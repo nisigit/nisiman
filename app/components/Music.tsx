@@ -40,17 +40,17 @@ export default async function Music() {
     <>
       <div className="w-full flex mt-2 text-sm text-slate-200">
         <div className="mr-2">
-          <FaSpotify className="inline-block text-green-500 align-middle text-xl" />
+          <FaSpotify className="inline-block text-green-600 dark:text-green-600 align-middle text-xl" />
         </div>
         <div className="align-text-bottom">
-          <p className="">
+          <p className="text-gray-700 dark:text-gray-200">
             {"Spotify — "}
             {currentTrack ? (
               <>
                 <span>Listening to </span>
                 <a
                   href={currentTrack.url}
-                  className="underline text-green-500 hover:text-green-600 transition duration-200"
+                  className="underline text-green-600 hover:text-green-500 dark:text-green-500 dark:hover:text-green-600 transition duration-200"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -67,10 +67,10 @@ export default async function Music() {
       <div className="mt-3 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
         {/* Recently played */}
         <div className="w-full">
-          <h1 className="text-xl mt-1 text-green-600">Recently Played</h1>
+          <h1 className="text-xl mt-1 text-green-700 dark:text-green-600">Recently Played</h1>
           {recentTracks.map((track: Track, index: number) => (
             <a key={index} href={track.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
+              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-200 dark:hover:bg-green-900 hover:bg-opacity-30 dark:hover:bg-opacity-20 hover:text-green-600 dark:hover:text-green-500">
                 <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>
@@ -85,10 +85,10 @@ export default async function Music() {
 
         {/* Top Songs */}
         <div className="w-full">
-          <h1 className="text-xl mt-1 text-green-600">Top Tracks (Month)</h1>
+          <h1 className="text-xl mt-1 text-green-700 dark:text-green-600">Top Tracks (Month)</h1>
           {topTracks.map((track: Track, index: number) => (
             <a key={index} href={track.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
+              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-200 dark:hover:bg-green-900 hover:bg-opacity-30 dark:hover:bg-opacity-20 hover:text-green-600 dark:hover:text-green-500">
                 <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>
@@ -103,10 +103,10 @@ export default async function Music() {
 
         {/* Top Artists */}
         <div className="w-full">
-          <h1 className="text-xl mt-1 text-green-600">Top Artists (Month)</h1>
+          <h1 className="text-xl mt-1 text-green-700 dark:text-green-600">Top Artists (Month)</h1>
           {topArtists.map((artist: Artist, index: number) => (
             <a key={index} href={artist.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-900 hover:bg-opacity-20 hover:text-green-500">
+              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-200 dark:hover:bg-green-900 hover:bg-opacity-30 dark:hover:bg-opacity-20 hover:text-green-600 dark:hover:text-green-500">
                 <h1 className="self-center text-xl select-none mr-3">
                   {index + 1}
                 </h1>

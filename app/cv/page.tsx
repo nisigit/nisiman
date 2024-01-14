@@ -12,16 +12,16 @@ const Content: React.FC<ContentProps> = ({ title, items }) => {
         {items.map((item, index) => {
           return (
             <div className="flex" key={index}>
-              <div className="text-xs flex-shrink-0 md:text-sm md:mr-8 w-[100px] md:w-[150px] text-slate-200 dark:text-slate-200">
+              <div className="text-xs flex-shrink-0 md:text-sm md:mr-8 w-[100px] md:w-[150px] text-slate-800 dark:text-slate-200">
                 {item.date}
               </div>
               <div className="flex flex-col flex-2">
                 <h4 className="text-md md:text-lg font-bold">{item.title}</h4>
-                <p className="text-sm md:text-md dark:text-gray-400">
+                <p className="text-sm md:text-md text-gray-700 dark:text-gray-400">
                   {item.subTitle}
                 </p>
                 {item.description ? (
-                  <p className="text-slate-400 dark:text-gray-400 mt-2">
+                  <p className="text-gray-700 dark:text-gray-400 mt-2">
                     {item.description}
                   </p>
                 ) : null}
@@ -37,16 +37,16 @@ const Content: React.FC<ContentProps> = ({ title, items }) => {
 export default function CV() {
   return (
     <>
-      <main className=" max-w-3xl mx-auto px-2 md:px-3 py-20 relative min-h-screen font-light">
+      <main className=" max-w-3xl mx-auto px-3 py-20 relative min-h-screen font-light">
         <section className="flex items-center">
           <div>
-            <h1 className="mb-0.5 text-xl md:text-2xl text-slate-100 dark:text-slate-100">
+            <h1 className="mb-0.5 text-xl md:text-2xl text-slate-900 dark:text-slate-100">
               Nisiman
             </h1>
-            <p className="text-slate-300 dark:text-slate-300 text-sm md:text-md">
+            <p className="text-slate-700 dark:text-slate-300 text-sm md:text-md">
               Computer Science Student
             </p>
-            <span className="text-sm text-slate-400 dark:text-slate-400">
+            <span className="text-sm text-slate-800 dark:text-slate-400">
               <Link href="/" className="hover:underline">
                 nisiman.xyz
               </Link>
