@@ -45,7 +45,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Providers>
           <div className=" bg-sky-400 dark:bg-slate-800 min-h-screen p-2 sm:p-4">
-            <div className="mx-auto my-4 xl:p-4 lg:my-8 text-lg lg:w-[1000px] rounded-3xl shadow-2xl bg-sky-50 text-black dark:bg-gray-900 dark:text-white dark:shadow-gray-800 overflow-auto">
+            <div className="mx-auto my-4 xl:p-4 lg:my-8 text-lg w-full lg:max-w-5xl rounded-3xl shadow-2xl bg-sky-50 text-black dark:bg-gray-900 dark:text-white dark:shadow-gray-800 overflow-auto">
               <section className="py-6 px-4 m-2 sm:m-6 border-b-4 border-neutral-300 dark:border-slate-700">
                 <div className="flex justify-between">
                   <div className="flex items-center">
