@@ -8,7 +8,7 @@ const courses2023_24: Course[] = [
   },
   { id: "INFR11239", name: "Principles and Design of IoT Systems" },
   { id: "INFR11088", name: "Extreme Computing" },
-  { id: "INF11223", name: "Machine Learning Practical" },
+  { id: "INFR11223", name: "Machine Learning Practical" },
 ];
 
 const courses2022_23: Course[] = [
@@ -26,7 +26,10 @@ const courses2021_22: Course[] = [
     id: "INFR08026",
     name: "Informatics 2 - Introduction to Algorithms and Data Structures",
   },
-  { id: "INFR08027", name: "Introduction to Computer Systems" },
+  {
+    id: "INFR08027",
+    name: "Informatics 2C - Introduction to Computer Systems",
+  },
   { id: "INFR08030", name: "Foundations of Data Science" },
   { id: "INFR08031", name: "Discrete Mathematics and Probability" },
   {
@@ -37,8 +40,8 @@ const courses2021_22: Course[] = [
 
 const courses2020_21: Course[] = [
   { id: "BUST08026", name: "Introduction to Business" },
-  { id: "INFR08025", name: "Informatics 1 - Introduction to Computation" },
-  { id: "INFR08029", name: "Informatics 1 - Object Oriented Programming" },
+  { id: "INFR08025", name: "Informatics 1A - Introduction to Computation" },
+  { id: "INFR08029", name: "Informatics 1B - Object Oriented Programming" },
   { id: "MATH08057", name: "Introduction to Linear Algebra" },
   { id: "MATH08058", name: "Calculus and its Applications" },
 ];
