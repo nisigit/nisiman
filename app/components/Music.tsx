@@ -1,4 +1,4 @@
-import { Artist, Track } from "@/interfaces/music";
+import MusicList from "@/app/components/MusicList";
 import { FaSpotify } from "react-icons/fa";
 import {
   getCurrentlyPlaying,
@@ -64,60 +64,15 @@ export default async function Music() {
           </p>
         </div>
       </div>
-      <div className="mt-3 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-3">
+      <div className="mt-3 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-3">
         {/* Recently played */}
-        <div className="w-full">
-          <h1 className="text-xl mt-1 text-green-700 dark:text-green-600">Recently Played</h1>
-          {recentTracks.map((track: Track, index: number) => (
-            <a key={index} href={track.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-200 dark:hover:bg-green-900 hover:bg-opacity-30 dark:hover:bg-opacity-20 hover:text-green-600 dark:hover:text-green-500">
-                <h1 className="self-center text-xl select-none mr-3">
-                  {index + 1}
-                </h1>
-                <div className="transition-transform duration-500 group-hover:translate-x-2">
-                  <h4 className="text-md line-clamp-1">{track.title}</h4>
-                  <h5 className="text-xs font-normal">{track.artist}</h5>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
+        <MusicList type="recent" list={recentTracks} />
 
         {/* Top Songs */}
-        <div className="w-full">
-          <h1 className="text-xl mt-1 text-green-700 dark:text-green-600">Top Tracks (Month)</h1>
-          {topTracks.map((track: Track, index: number) => (
-            <a key={index} href={track.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-200 dark:hover:bg-green-900 hover:bg-opacity-30 dark:hover:bg-opacity-20 hover:text-green-600 dark:hover:text-green-500">
-                <h1 className="self-center text-xl select-none mr-3">
-                  {index + 1}
-                </h1>
-                <div className="transition-transform duration-500 group-hover:translate-x-2">
-                  <h4 className="text-md line-clamp-1">{track.title}</h4>
-                  <h5 className="text-xs font-normal">{track.artist}</h5>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
+        <MusicList type="top" list={topTracks} />
 
         {/* Top Artists */}
-        <div className="w-full">
-          <h1 className="text-xl mt-1 text-green-700 dark:text-green-600">Top Artists (Month)</h1>
-          {topArtists.map((artist: Artist, index: number) => (
-            <a key={index} href={artist.url} target="_blank" rel="noreferrer">
-              <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-200 dark:hover:bg-green-900 hover:bg-opacity-30 dark:hover:bg-opacity-20 hover:text-green-600 dark:hover:text-green-500">
-                <h1 className="self-center text-xl select-none mr-3">
-                  {index + 1}
-                </h1>
-                <div className="transition-transform duration-500 group-hover:translate-x-2">
-                  <h4 className="text-md line-clamp-1">{artist.name}</h4>
-                  <h5 className="text-xs font-normal">{}</h5>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
+        <MusicList type="artist" list={topArtists} />
       </div>
     </>
   );
