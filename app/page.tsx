@@ -57,7 +57,7 @@ export default function Home() {
           The best way to reach me is to send me an email at{" "}
           <a
             href="mailto:nisimanbhardwaj29@gmail.com"
-            className="text-blue-600 underline"
+            className="text-blue-500 underline hover:text-blue-600 duration-100"
           >
             nisimanbhardwaj29@gmail.com
           </a>

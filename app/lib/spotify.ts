@@ -77,16 +77,13 @@ export const getTopTracks = async (listLimit: Number) => {
 
   const data = await response.json();
 
-  return data.items
-    .filter((track: any) => !track.name.includes("Abrar"))
-    .slice(0, listLimit)
-    .map((track: any) => {
-      return {
-        title: track.name,
-        artist: track.artists.map((_artist: any) => _artist.name).join(", "),
-        url: track.external_urls.spotify,
-      };
-    });
+  return data.items.slice(0, listLimit).map((track: any) => {
+    return {
+      title: track.name,
+      artist: track.artists.map((_artist: any) => _artist.name).join(", "),
+      url: track.external_urls.spotify,
+    };
+  });
 };
 
 export const getTopArtists = async (listLimit: Number) => {
