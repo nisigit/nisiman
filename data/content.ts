@@ -35,7 +35,7 @@ export const contentData = [
           "Software Developer in Edinburgh University Formula Student's simulation team, working on the open-source simulation software for Formula Student driverless cars (eufs_sim).",
       },
       {
-        title: "University of Edinburgh Information Services",
+        title: "The University of Edinburgh Information Services",
         subTitle: "Web Developer",
         date: "06/2022 - 04/2023",
         description:
@@ -54,6 +54,13 @@ export const contentData = [
         date: "05/2021 - 08/2021",
         description:
           "Full-stack Software Engineer Intern (trainee) in Delhi Police's CCTNS portal project. I added new search pages on the Java EE application to dynamically generate MySQL queries and display data using JasperReports.",
+      },
+      {
+        title: "The University of Edinburgh - Accommodation Services",
+        subTitle: "Resident Assistant",
+        date: "09/2022 - present",
+        description:
+          "Resident Assistant in the University's accommodation services, facilitating over 300 students settle into university life by organising events and being students' first point of contact for any help.",
       },
     ],
   },
