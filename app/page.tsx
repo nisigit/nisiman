@@ -24,10 +24,10 @@ export default function Home() {
           methods for generating synthetic data.
         </p>
         <p className="mt-4 text-base">
-          My favourite musicians are Daft Punk
-          <Image className="inline m-1" src={dp} alt="dp" height={25} />, Pink
-          Floyd and Portugal. The Man. In my free time, I like playing the{" "}
-          <i>Bansuri</i>, playing chess, and exercising.
+          My favourite musicians include Daft Punk
+          <Image className="inline m-1" src={dp} alt="dp" height={25} /> and
+          Pink Floyd. In my free time, I like playing the <i>Bansuri</i>,
+          playing chess, and exercising.
         </p>
       </section>
 
@@ -37,16 +37,17 @@ export default function Home() {
           Learning
         </h2>
         <p className="mt-2 text-base">
-          I&apos;m currently taking modules on Extreme Computing, Principles and
-          Design of IoT Systems and Machine Learning (coursework{" "}
+          I&apos;m currently taking modules on Machine Learning, Applied Cloud
+          Programming and Compiling Techniques (coursework{" "}
           <Link
             href="/coursework"
             className="text-blue-500 underline hover:text-blue-600 duration-100"
           >
             here
           </Link>
-          ). I am also learning Rust in my spare time by working on a few side
-          projects.
+          ). For my honours project, I am primarily working with Mixnet
+          simulators, scikit-learn, Seaborn and other statistical tools. I am
+          also learning the Rust programming language in my spare time.
         </p>
       </section>
 

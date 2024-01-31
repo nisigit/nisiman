@@ -26,6 +26,7 @@ export const contentData = [
         date: "06/2023 - 08/2023",
         description:
           "Software Engineer Intern in the Feeds Infrastructure & Tooling team. I developed an environment, and its data feed, to synthesise dummy investment portfolios and transactions based on configurations to demonstrate the platform's features to prospective clients.",
+        link: "https://www.addepar.com/",
       },
       {
         title: "Edinburgh University Formula Student",
@@ -33,6 +34,7 @@ export const contentData = [
         date: "08/2023 - 08/2023",
         description:
           "Software Developer in Edinburgh University Formula Student's simulation team, working on the open-source simulation software for Formula Student driverless cars (eufs_sim).",
+        link: "https://eufs.co/",
       },
       {
         title: "The University of Edinburgh Information Services",
@@ -47,6 +49,7 @@ export const contentData = [
         date: "09/2021 - 05/2022",
         description:
           "Developer in the Darwin III rocket's software team, where I developed the local and online dashboards to read the rocket's telemetry data in real-time and update its state.",
+        link: "https://www.endeavourockets.com/",
       },
       {
         title: "Tech Mahindra",
@@ -74,6 +77,7 @@ export const contentData = [
         date: "2023",
         description:
           "Android app to parse live movement data from Nordic Thingy and Respeck sensors using Bluetooth Low Energy. Deployed a TensorFlow model using TFLite to classify 44 stationary and dynamic activities with 97% accuracy.",
+        link: "https://github.com/nisigit/HAR-App",
       },
       {
         title: "EduPlot",
@@ -81,6 +85,7 @@ export const contentData = [
         date: "2023",
         description:
           "Robot that plots SVGs and inputs from a drawing tablet onto a whiteboard. I used React, Flask and Firebase to develop the full-stack web interface, with an interactive canvas, which also sends data to the robot using web sockets.",
+        link: "https://drive.google.com/file/d/146SCOIkLFP_fy7PF2nuTWvkp3_y5F_Hi/view",
       },
       {
         title: "Drone Delivery System",
@@ -88,6 +93,7 @@ export const contentData = [
         date: "2022",
         description:
           "Java application to simulate a drone delivery system for pizzas. I implemented a weighted A* search algorithm to plan an efficient delivery route.",
+        link: "https://github.com/nisigit/Informatics-Large-Practical",
       },
       {
         title: "Venus & Mars",
@@ -95,6 +101,7 @@ export const contentData = [
         date: "2021",
         description:
           "Promotional website for a dating app startup (now defunct). ",
+        link: "https://vnmwebsite.surge.sh",
       },
     ],
   },
@@ -107,6 +114,7 @@ export type Content = {
     subTitle: string;
     date: string;
     description: string;
+    link?: string;
   }[];
 };
 

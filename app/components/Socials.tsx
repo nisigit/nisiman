@@ -43,7 +43,7 @@ export default function Socials() {
           <a
             href={button.href}
             key={index}
-            target="_black"
+            target="_blank"
             rel="noopener noreferrer"
           >
             <button

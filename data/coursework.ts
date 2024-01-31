@@ -2,10 +2,7 @@ import { Course } from "@/interfaces/interfaces";
 
 const courses2023_24: Course[] = [
   { id: "INFR11249", name: "Applied Cloud Programming" },
-  {
-    id: "INFR11225",
-    name: "Natural Language Understanding, Generation, and Machine Translation",
-  },
+  { id: "INFR10065", name: "Compiling Techniques" },
   { id: "INFR11239", name: "Principles and Design of IoT Systems" },
   { id: "INFR11088", name: "Extreme Computing" },
   { id: "INFR11223", name: "Machine Learning Practical" },
@@ -21,7 +18,10 @@ const courses2022_23: Course[] = [
 ];
 
 const courses2021_22: Course[] = [
-  { id: "INFR08010", name: "Informatics 2D - Reasoning and Agents" },
+  {
+    id: "INFR08032",
+    name: "Informatics 2 - Software Engineering and Professional Practice",
+  },
   {
     id: "INFR08026",
     name: "Informatics 2 - Introduction to Algorithms and Data Structures",
@@ -30,12 +30,10 @@ const courses2021_22: Course[] = [
     id: "INFR08027",
     name: "Informatics 2C - Introduction to Computer Systems",
   },
+  { id: "INFR08010", name: "Informatics 2D - Reasoning and Agents" },
+
   { id: "INFR08030", name: "Foundations of Data Science" },
   { id: "INFR08031", name: "Discrete Mathematics and Probability" },
-  {
-    id: "INFR08032",
-    name: "Informatics 2 - Software Engineering and Professional Practice",
-  },
 ];
 
 const courses2020_21: Course[] = [

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { contentData } from "@/data/content";
 import type { Content } from "@/data/content";
+import { FaLink } from "react-icons/fa";
 
 type ContentProps = Content;
 
@@ -16,7 +17,21 @@ const Content: React.FC<ContentProps> = ({ title, items }) => {
                 {item.date}
               </div>
               <div className="flex flex-col flex-2">
-                <h4 className="text-md md:text-lg font-bold">{item.title}</h4>
+                <div className="flex items-center">
+                  <h4 className="text-md md:text-lg font-bold inline">
+                    {item.title}
+                  </h4>
+                  {item.link ? (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mx-2 inline cursor-pointer text-slate-600 dark:text-slate-400 dark:hover:text-slate-300 hover:text-slate-900 transition-colors duration-200"
+                    >
+                      <FaLink />
+                    </a>
+                  ) : null}
+                </div>
                 <p className="text-sm md:text-md text-gray-700 dark:text-gray-400">
                   {item.subTitle}
                 </p>
