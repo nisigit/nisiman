@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Socials from "./components/Socials";
 import Music from "./components/Music";
-import dp from "@/public/android-chrome-512x512.png";
+import dp from "@/public/android-chrome-384x384.png";
 
 export default function Home() {
   return (
@@ -25,7 +25,7 @@ export default function Home() {
         </p>
         <p className="mt-4 text-base">
           My favourite musicians include Daft Punk
-          <Image className="inline m-1" src={dp} alt="dp" height={25} /> and
+          <Image className="inline m-1" src={dp} alt="dp" height={30} /> and
           Pink Floyd. In my free time, I like playing the <i>Bansuri</i>,
           playing chess, and exercising.
         </p>
