@@ -9,12 +9,13 @@ const courses2023_24: Course[] = [
 ];
 
 const courses2022_23: Course[] = [
+  { id: "INFR10086", name: "Machine Learning" },
   { id: "INFR10067", name: "Computer Security" },
   { id: "INFR10078", name: "Foundations of Natural Language Processing" },
   { id: "INFR11132", name: "System Design Project" },
   { id: "INFR09051", name: "Informatics Large Practical" },
-  { id: "INFR10022", name: "Professional Issues" },
   { id: "INFR10085", name: "Introduction to Mobile Robotics" },
+  { id: "INFR10022", name: "Professional Issues" },
 ];
 
 const courses2021_22: Course[] = [

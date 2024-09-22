@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Nisiman",
   description:
-    "Hi! I'm Nisiman, a final year Computer Science student at The University of Edinburgh.",
+    "Hi! I'm Nisiman. I'm a software engineer from New Delhi, currently based in London.",
   icons: {
     icon: [
       "favicon.ico?v=4",

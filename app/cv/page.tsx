@@ -59,7 +59,7 @@ export default function CV() {
               Nisiman
             </h1>
             <p className="text-slate-700 dark:text-slate-300 text-sm md:text-md">
-              Computer Science Student
+              Software Engineer
             </p>
             <span className="text-sm text-slate-800 dark:text-slate-400">
               <Link href="/" className="hover:underline">

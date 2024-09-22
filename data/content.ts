@@ -6,14 +6,14 @@ export const contentData = [
         title: "The University of Edinburgh",
         subTitle: "BEng (Hons) Computer Science",
         date: "09/2020 - 05/2024",
-        description: "Classification: First Class Honours (expected)",
+        description:
+          "Graduated with First Class Honours and received a first on my honours dissertation titled 'Generating Synthetic Data for Privacy Research'.",
       },
       {
         title: "The Mother's International School",
         subTitle:
           "Grade 12 (CBSE) — Physics, Chemistry, Mathematics, Computer Science, English",
         date: "04/2008 - 05/2020",
-        description: "94% aggregate",
       },
     ],
   },
@@ -21,8 +21,16 @@ export const contentData = [
     title: "Work Experience",
     items: [
       {
+        title: "Playtech",
+        subTitle: "Software Developer -- Python | SQL | Kafka | Docker",
+        date: "07/2024 - present",
+        description:
+          "I'm a developer in the Sportsbook team, working on the backend services for the Sportsbook platform.",
+        link: "https://www.playtech.com/",
+      },
+      {
         title: "Addepar",
-        subTitle: "Software Engineer Intern",
+        subTitle: "Software Engineer Intern -- Python | Java | Spark | MySQL",
         date: "06/2023 - 08/2023",
         description:
           "Software Engineer Intern in the Feeds Infrastructure & Tooling team. I developed an environment, and its data feed, to synthesise dummy investment portfolios and transactions based on configurations to demonstrate the platform's features to prospective clients.",
@@ -31,7 +39,7 @@ export const contentData = [
       {
         title: "Edinburgh University Formula Student",
         subTitle: "Software Developer",
-        date: "08/2023 - 08/2023",
+        date: "08/2022 - 08/2023",
         description:
           "Software Developer in Edinburgh University Formula Student's simulation team, working on the open-source simulation software for Formula Student driverless cars (eufs_sim).",
         link: "https://eufs.co/",
@@ -41,7 +49,7 @@ export const contentData = [
         subTitle: "Web Developer",
         date: "06/2022 - 04/2023",
         description:
-          "Web Developer in the Information Services Group, where I helped with CMS migration and developed a full-stack live status dashboard for the University's websites using Laravel.",
+          "As a part-time developer, I worked on migrating the university's Drupal CMS to the latest version and developed a full-stack live status dashboard for the University's websites using Laravel.",
       },
       {
         title: "Endeavour",
