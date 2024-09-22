@@ -9,7 +9,7 @@ import { FiArrowDown } from "react-icons/fi";
 export default function ProjectCards() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [initialMaxHeight, setInitialMaxHeight] = useState("0px");
-  const projectsContainerRef = useRef(null);
+  const projectsContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     calculateInitialMaxHeight();
@@ -17,12 +17,14 @@ export default function ProjectCards() {
 
   const calculateInitialMaxHeight = () => {
     const div = projectsContainerRef.current;
+    if (!div) return;
+    if (!div.children) return;
     const children = Array.from(div.children);
     if (children.length > 1) {
       const totalHeight = children.slice(0, 1).reduce((sum, child) => {
         return (
           sum +
-          child.offsetHeight +
+          (child as HTMLElement).offsetHeight +
           parseInt(window.getComputedStyle(child).marginBottom, 10)
         );
       }, 0);
@@ -33,6 +35,7 @@ export default function ProjectCards() {
 
   const expandDiv = () => {
     const div = projectsContainerRef.current;
+    if (!div) return;
     if (!isExpanded) {
       div.style.maxHeight = "4000px"; // A very large max-height to accommodate all items
     } else {
