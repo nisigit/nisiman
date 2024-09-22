@@ -121,7 +121,7 @@ export type Content = {
     title: string;
     subTitle: string;
     date: string;
-    description: string;
+    description?: string;
     link?: string;
   }[];
 };
