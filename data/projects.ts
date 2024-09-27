@@ -9,7 +9,7 @@ export const projects: Project[] = [
     title: "Activity Recognition App",
     github: "https://github.com/nisigit/HAR-App",
     description:
-      "Android app to parse live movement data from Nordic Thingy and Respeck sensors using Bluetooth Low Energy. I Deployed TensorFlow Machine-Learning models using TFLite to classify 44 stationary and dynamic activities with 97% accuracy. The models use Convolutional Neural Networks and Long Short-Term Memory networks.",
+      "Android application that parses live movement data from Nordic Thingy and Respeck sensors using Bluetooth Low Energy. I deployed TensorFlow Machine-Learning models using TFLite to classify 44 stationary and dynamic activities with 97% accuracy. The models use Convolutional Neural Networks and Long Short-Term Memory networks.",
     image: har_app,
     tools: ["Android", "Kotlin", "TensorFlow", "Keras", "Python"],
   },
