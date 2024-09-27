@@ -35,7 +35,7 @@ export default function Projects() {
     const div = projectsContainerRef.current;
     if (!div) return;
     if (!isExpanded) {
-      div.style.maxHeight = "4500px";
+      div.style.maxHeight = "4000px";
     } else {
       div.style.maxHeight = initialMaxHeight;
     }
