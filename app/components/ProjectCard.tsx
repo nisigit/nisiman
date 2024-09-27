@@ -7,13 +7,13 @@ import { FiLink } from "react-icons/fi";
 export default function ProjectCard(project: Project) {
   return (
     <div className="flex flex-col lg:flex-row lg:min-h-[280px] lg:items-center bg-slate-200 text-slate-800 dark:bg-gray-800 dark:text-white p-4 lg:p-6 rounded-lg my-1 overflow-hidden w-full gap-4">
-      <div className="flex-shrink-0 flex justify-center items-center lg:justify-start lg:items-start">
+        <div className="flex-shrink-0 flex justify-center items-center lg:justify-start lg:items-start lg:w-2/5">
         <Image
           src={project.image}
           alt={project.title}
           width={350}
-          height={250}
-          className="rounded-lg overflow-hidden w-full h-auto"
+          height={300}
+          className="rounded-lg overflow-hidden w-full max-h-[280px]"
         />
       </div>
       <div className="flex-1">

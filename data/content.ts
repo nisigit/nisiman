@@ -1,28 +1,11 @@
 export const contentData = [
   {
-    title: "Education",
-    items: [
-      {
-        title: "The University of Edinburgh",
-        subTitle: "BEng (Hons) Computer Science",
-        date: "09/2020 - 05/2024",
-        description:
-          "Graduated with First Class Honours and received a first on my honours dissertation titled 'Generating Synthetic Data for Privacy Research'.",
-      },
-      {
-        title: "The Mother's International School",
-        subTitle:
-          "Grade 12 (CBSE) — Physics, Chemistry, Mathematics, Computer Science, English",
-        date: "04/2008 - 05/2020",
-      },
-    ],
-  },
-  {
     title: "Work Experience",
     items: [
       {
         title: "Playtech",
-        subTitle: "Software Developer -- Python | SQL | Kafka | Docker",
+        subTitle:
+          "Software Developer -- Python | Golang | SQL | Kafka | Docker",
         date: "07/2024 - present",
         description:
           "I'm a developer in the Sportsbook team, working on the backend services for the Sportsbook platform.",
@@ -50,6 +33,7 @@ export const contentData = [
         date: "06/2022 - 04/2023",
         description:
           "As a part-time developer, I worked on migrating the university's Drupal CMS to the latest version and developed a full-stack live status dashboard for the University's websites using Laravel.",
+        link: "https://www.ed.ac.uk/information-services",
       },
       {
         title: "Endeavour",
@@ -65,6 +49,7 @@ export const contentData = [
         date: "05/2021 - 08/2021",
         description:
           "Full-stack Software Engineer Intern (trainee) in Delhi Police's CCTNS portal project. I added new search pages on the Java EE application to dynamically generate MySQL queries and display data using JasperReports.",
+        link: "https://www.techmahindra.com/",
       },
       {
         title: "The University of Edinburgh - Accommodation Services",
@@ -72,6 +57,25 @@ export const contentData = [
         date: "09/2022 - 05/2024",
         description:
           "Resident Assistant in the University's accommodation services, facilitating over 300 students settle into university life by organising events and being students' first point of contact for any help.",
+      },
+    ],
+  },
+
+  {
+    title: "Education",
+    items: [
+      {
+        title: "The University of Edinburgh",
+        subTitle: "BEng (Hons) Computer Science",
+        date: "09/2020 - 05/2024",
+        description:
+          "Graduated with First Class Honours and received a first on my honours dissertation titled 'Generating Synthetic Data for Privacy Research'.",
+      },
+      {
+        title: "The Mother's International School",
+        subTitle:
+          "Grade 12 (CBSE) — Physics, Chemistry, Mathematics, Computer Science, English",
+        date: "04/2008 - 05/2020",
       },
     ],
   },

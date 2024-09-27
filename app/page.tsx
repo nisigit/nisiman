@@ -18,14 +18,23 @@ export default function Home() {
           Delhi, currently based in London. I have a demonstrated history of
           working with distributed systems, microservices and financial data
           feeds. My interests are in the fields of Machine Learning, Distributed
-          Systems and building scaleable applications.
+          Systems and building scaleable applications. You can download my
+          resume{" "}
+          <Link
+            href="https://drive.google.com/file/d/1wNBd0Fis1hNJSgiGqouNyU3Oc7QJYHzu/view?usp=drive_link"
+            className="text-blue-500 underline hover:text-blue-600 duration-100"
+            target="_blank"
+          >
+            here
+          </Link>
+          .
         </p>
 
         <p className="mt-4 text-base">
           I graduated from The University of Edinburgh in July 2024 with a
-          Computer Science degree. Before going to Edinburgh, I was a student at
-          The Mother&apos;s International School, New Delhi. In my free time, I
-          like working out and playing chess. I also enjoy music and can play
+          degree in Computer Science. Before going to Edinburgh, I was a student
+          at The Mother&apos;s International School, New Delhi. In my free time,
+          I like working out and playing chess. I also enjoy music and can play
           the <i>Bansuri</i> and a bit of guitar. My favourite musicians include
           Daft Punk
           <Image className="inline m-0" src={dp} alt="dp" height={25} /> and

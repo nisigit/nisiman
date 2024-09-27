@@ -22,14 +22,14 @@ const Content: React.FC<ContentProps> = ({ title, items }) => {
                     {item.title}
                   </h4>
                   {item.link ? (
-                    <a
+                    <Link
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mx-2 inline cursor-pointer text-slate-600 dark:text-slate-400 dark:hover:text-slate-300 hover:text-slate-900 transition-colors duration-200"
                     >
                       <FaLink />
-                    </a>
+                    </Link>
                   ) : null}
                 </div>
                 <p className="text-sm md:text-md text-gray-700 dark:text-gray-400">
