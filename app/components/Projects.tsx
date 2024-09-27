@@ -15,9 +15,9 @@ export default function Projects() {
   }, []);
 
   const calculateInitialMaxHeight = () => {
-    const div = projectsContainerRef.current;
-    if (!div?.children) return;
-    const children = Array.from(div?.children);
+    const projectsDiv = projectsContainerRef.current;
+    if (!projectsDiv?.children) return;
+    const children = Array.from(projectsDiv?.children);
     if (children.length > 1) {
       const totalHeight = children.slice(0, 1).reduce((sum, child) => {
         return (
@@ -27,17 +27,17 @@ export default function Projects() {
         );
       }, 0);
       setInitialMaxHeight(`${totalHeight}px`);
-      div.style.maxHeight = `${totalHeight}px`;
+      projectsDiv.style.maxHeight = `${totalHeight}px`;
     }
   };
 
   const expandDiv = () => {
-    const div = projectsContainerRef.current;
-    if (!div) return;
+    const projectsDiv = projectsContainerRef.current;
+    if (!projectsDiv) return;
     if (!isExpanded) {
-      div.style.maxHeight = "4000px";
+      projectsDiv.style.maxHeight = "4000px";
     } else {
-      div.style.maxHeight = initialMaxHeight;
+      projectsDiv.style.maxHeight = initialMaxHeight;
     }
     setIsExpanded(!isExpanded);
   };
@@ -50,7 +50,7 @@ export default function Projects() {
         </h2>
         <button
           onClick={expandDiv}
-          className="p-2 font-bold text-black dark:text-white text-lg cursor-pointer transform transition-colors duration-600 rounded-md bg-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 dark:bg-slate-800 bg-opacity-25"
+          className="p-2 font-bold text-black dark:text-white text-lg cursor-pointer transform transition-colors duration-600 rounded-md bg-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 dark:bg-slate-800 bg-opacity-25 duration-200"
         >
           <FiArrowDown
             className={`fa-lg transform transition-transform ${
@@ -70,9 +70,9 @@ export default function Projects() {
       <div className="flex justify-center w-full m-2">
         <p
           onClick={expandDiv}
-          className="expand text-black font-semibold dark:text-white text-sm w-fit rounded p-2 mt-2 cursor-pointer bg-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 dark:bg-slate-800 bg-opacity-25"
+          className="expand text-black font-semibold dark:text-white text-sm w-fit rounded p-2 mt-2 cursor-pointer bg-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 dark:bg-slate-800 bg-opacity-25 duration-200"
         >
-          {isExpanded ? "Show Less" : "Show More"}
+          {isExpanded ? "Show less" : "Show more..."}
         </p>
       </div>
     </div>

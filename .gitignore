@@ -40,3 +40,6 @@ next-env.d.ts
 .prettierrc
 # Local Netlify folder
 .netlify
+
+# Visual Studio Code
+.vscode

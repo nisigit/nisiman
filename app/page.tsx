@@ -3,6 +3,7 @@ import Link from "next/link";
 import Socials from "./components/Socials";
 import Music from "./components/Music";
 import Projects from "./components/Projects";
+import nisi from "@/public/assets/nisi.jpeg";
 import dp from "@/public/android-chrome-384x384.png";
 
 export default function Home() {
@@ -13,33 +14,47 @@ export default function Home() {
         <h2 className="text-lg font-bold leading-tight sm:text-2xl">
           About Me
         </h2>
-        <p className="mt-4 text-base">
-          Hi there! I&apos;m Nisiman. I&apos;m a Software Engineer from New
-          Delhi, currently based in London. I have a demonstrated history of
-          working with distributed systems, microservices and financial data
-          feeds. My interests are in the fields of Machine Learning, Distributed
-          Systems and building scaleable applications. You can download my
-          resume{" "}
-          <Link
-            href="https://drive.google.com/file/d/1wNBd0Fis1hNJSgiGqouNyU3Oc7QJYHzu/view?usp=drive_link"
-            className="text-blue-500 underline hover:text-blue-600 duration-100"
-            target="_blank"
-          >
-            here
-          </Link>
-          .
-        </p>
 
-        <p className="mt-4 text-base">
-          I graduated from The University of Edinburgh in July 2024 with a
-          degree in Computer Science. Before going to Edinburgh, I was a student
-          at The Mother&apos;s International School, New Delhi. In my free time,
-          I like working out and playing chess. I also enjoy music and can play
-          the <i>Bansuri</i> and a bit of guitar. My favourite musicians include
-          Daft Punk
-          <Image className="inline m-0" src={dp} alt="dp" height={25} /> and
-          Foster The People.
-        </p>
+        <div className="flex flex-col lg:flex-row lg:justify-between">
+          <div className="lg:w-2/5 flex justify-start items-center">
+            <Image
+              src={nisi}
+              alt="Nisiman's Picture"
+              className="rounded-full lg:rounded-md w-[100px] lg:w-[250px] m-3"
+            />
+          </div>
+          <div className="lg:w-3/5">
+            <p className="mt-4 text-base">
+              Hi there! I&apos;m Nisiman. I&apos;m a Software Engineer from New
+              Delhi, currently based in London. I graduated from The University
+              of Edinburgh in July 2024 with a degree in Computer Science.
+              Before studying at Edinburgh, I was a student at The Mother&apos;s
+              International School, New Delhi.
+            </p>
+
+            <p className="mt-4 text-base">
+              I have a demonstrated history of working with distributed systems,
+              microservices and financial data feeds (resume{" "}
+              <Link
+                href="https://drive.google.com/file/d/1wNBd0Fis1hNJSgiGqouNyU3Oc7QJYHzu/view?usp=drive_link"
+                className="text-blue-500 underline hover:text-blue-600 duration-100"
+                target="_blank"
+              >
+                here
+              </Link>
+              ). I am currently interested in learning about building scaleable
+              applications, Distributed Systems and Machine Learning.
+            </p>
+
+            <p className="mt-4 text-base">
+              In my free time, you can find me playing a sport or chess. I also
+              enjoy music a lot and can play the <i>Bansuri</i> and a bit of
+              guitar. My favourite musicians include Daft Punk
+              <Image className="inline m-0" src={dp} alt="dp" height={25} /> and
+              Foster The People.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Projects */}

@@ -49,13 +49,6 @@ export default function RootLayout({
               <section className="py-6 px-4 m-2 sm:m-6 border-b-4 border-neutral-300 dark:border-slate-700">
                 <div className="flex justify-between">
                   <div className="flex items-center">
-                    <Image
-                      src={nisi}
-                      alt="Nisiman's profile image"
-                      width={80}
-                      height={80}
-                      className="lg:block rounded-full mr-4"
-                    />
                     <h1 className="text-xl font-bold leading-tight sm:text-4xl">
                       Nisiman
                     </h1>

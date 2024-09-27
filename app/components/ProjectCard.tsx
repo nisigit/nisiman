@@ -6,13 +6,12 @@ import { FiLink } from "react-icons/fi";
 
 export default function ProjectCard(project: Project) {
   return (
-    <div className="flex flex-col lg:flex-row lg:min-h-[280px] lg:items-center bg-slate-200 text-slate-800 dark:bg-gray-800 dark:text-white p-4 lg:p-6 rounded-lg my-1 overflow-hidden w-full gap-4">
-        <div className="flex-shrink-0 flex justify-center items-center lg:justify-start lg:items-start lg:w-2/5">
+    <div className="flex flex-col lg:flex-row lg:min-h-[280px] lg:items-center bg-slate-200 text-slate-900 dark:bg-gray-800 dark:text-white p-4 lg:p-6 rounded-lg my-1 overflow-hidden w-full gap-4">
+      <div className="flex-shrink-0 flex justify-center items-center lg:justify-start lg:items-start lg:w-2/5">
         <Image
           src={project.image}
           alt={project.title}
           width={350}
-          height={300}
           className="rounded-lg overflow-hidden w-full max-h-[280px]"
         />
       </div>
@@ -34,12 +33,12 @@ export default function ProjectCard(project: Project) {
         <div className="flex gap-4 my-2">
           {project.github && (
             <Link href={project.github} target="_blank" className="w-6 h-6">
-              <FaGithub className="w-6 h-6 text-gray-700 hover:text-black dark:text-white dark:hover:text-gray-400" />
+              <FaGithub className="w-6 h-6 text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-105 duration-200" />
             </Link>
           )}
           {project.preview && (
             <Link href={project.preview} target="_blank" className="w-6 h-6">
-              <FiLink className="w-6 h-6 text-gray-700 hover:text-black dark:text-white dark:hover:text-gray-400" />
+              <FiLink className="w-6 h-6 text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-105 duration-200" />
             </Link>
           )}
         </div>

@@ -26,19 +26,13 @@ export default function ThemeSwitch() {
       />
     );
 
-  if (resolvedTheme === "dark") {
-    return (
-      <div className="p-2 text-lg cursor-pointer transform transition-colors duration-600 rounded-md hover:bg-slate-300 hover:bg-opacity-25">
-        <FiSun onClick={() => setTheme("light")} />
-      </div>
-    );
-  }
-
-  if (resolvedTheme === "light") {
-    return (
-      <div className="p-2 text-black text-lg cursor-pointer transform transition-colors duration-600 rounded-md hover:bg-slate-800 hover:bg-opacity-25">
-        <FiMoon onClick={() => setTheme("dark")} />
-      </div>
-    );
-  }
+  return (
+    <div className="p-2 text-lg cursor-pointer transform transition duration-600 rounded-md text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-125">
+      {resolvedTheme === "dark" ? (
+        <FiMoon onClick={() => setTheme("light")} />
+      ) : (
+        <FiSun onClick={() => setTheme("dark")} />
+      )}
+    </div>
+  );
 }

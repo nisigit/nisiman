@@ -1,3 +1,4 @@
+import Link from "next/link";
 import MusicList from "@/app/components/MusicList";
 import { FaSpotify } from "react-icons/fa";
 import {
@@ -48,7 +49,7 @@ export default async function Music() {
             {currentTrack ? (
               <>
                 <span>Listening to </span>
-                <a
+                <Link
                   href={currentTrack.url}
                   className="underline text-green-600 hover:text-green-500 dark:text-green-500 dark:hover:text-green-600 transition duration-200"
                   target="_blank"
@@ -56,7 +57,7 @@ export default async function Music() {
                 >
                   <span className="font-semibold">{currentTrack.title}</span> by{" "}
                   <span className="font-semibold">{currentTrack.artist}</span>
-                </a>
+                </Link>
               </>
             ) : (
               "Not playing"
