@@ -1,12 +1,11 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { Project } from "@/interfaces/interfaces";
 import { projects } from "@/data/projects";
 import { FiArrowDown } from "react-icons/fi";
+import ProjectCard from "./ProjectCard";
 
-export default function ProjectCards() {
+export default function Projects() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [initialMaxHeight, setInitialMaxHeight] = useState("0px");
   const projectsContainerRef = useRef<HTMLDivElement>(null);
@@ -17,9 +16,8 @@ export default function ProjectCards() {
 
   const calculateInitialMaxHeight = () => {
     const div = projectsContainerRef.current;
-    if (!div) return;
-    if (!div.children) return;
-    const children = Array.from(div.children);
+    if (!div?.children) return;
+    const children = Array.from(div?.children);
     if (children.length > 1) {
       const totalHeight = children.slice(0, 1).reduce((sum, child) => {
         return (
@@ -37,9 +35,9 @@ export default function ProjectCards() {
     const div = projectsContainerRef.current;
     if (!div) return;
     if (!isExpanded) {
-      div.style.maxHeight = "4000px"; // A very large max-height to accommodate all items
+      div.style.maxHeight = "5000px";
     } else {
-      div.style.maxHeight = initialMaxHeight; // Collapse back to the initial calculated max-height
+      div.style.maxHeight = initialMaxHeight;
     }
     setIsExpanded(!isExpanded);
   };
@@ -62,42 +60,11 @@ export default function ProjectCards() {
         </button>
       </div>
       <div
-        className="projects-cards w-full flex flex-wrap justify-center overflow-hidden transition-max-height duration-500 ease-in-out"
+        className="projects-cards w-full flex flex-wrap justify-center overflow-hidden transition-max-height duration-500 ease-in-out gap-5"
         ref={projectsContainerRef}
       >
         {projects.map((project: Project) => (
-          <Link
-            key={project.title}
-            href={project.link}
-            className="cursor-pointer group"
-          >
-            <div className="overflow-hidden shadow-lg rounded-xl mt-4 lg:max-w-lg">
-              <div className="dark:bg-gray-800 relative">
-                <Image
-                  className="h-[250px] object-contain opacity-40 bg-slate-300"
-                  src={project.image}
-                  alt={project.title}
-                />
-                <div className="absolute inset-0 dark:bg-black dark:opacity-0 dark:group-hover:opacity-50 transition-opacity duration-600"></div>
-                <div className="absolute bottom-0 left-0 p-4">
-                  <h3 className="dark:text-white text-lg font-bold">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm hidden group-hover:block">
-                    {project.description}
-                  </p>
-                </div>
-              </div>
-              <div className="p-4 lg:h-[80px] bg-gray-700 text-sm flex flex-wrap">
-                {project.tools.map((tool, index) => (
-                  <span key={index}>
-                    {<span className="text-gray-300 mx-1">•</span>}
-                    <span className="text-gray-300">{tool}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          </Link>
+          <ProjectCard key={project.title} {...project} />
         ))}
       </div>
       <div className="flex justify-center w-full m-2">

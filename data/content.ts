@@ -69,50 +69,50 @@ export const contentData = [
       {
         title: "The University of Edinburgh - Accommodation Services",
         subTitle: "Resident Assistant",
-        date: "09/2022 - present",
+        date: "09/2022 - 05/2024",
         description:
           "Resident Assistant in the University's accommodation services, facilitating over 300 students settle into university life by organising events and being students' first point of contact for any help.",
       },
     ],
   },
 
-  {
-    title: "Projects",
-    items: [
-      {
-        title: "Human Activity Recognition App",
-        subTitle: "Android Studio, Kotlin, Python, TensorFlow, Pandas",
-        date: "2023",
-        description:
-          "Android app to parse live movement data from Nordic Thingy and Respeck sensors using Bluetooth Low Energy. Deployed a TensorFlow model using TFLite to classify 44 stationary and dynamic activities with 97% accuracy.",
-        link: "https://github.com/nisigit/HAR-App",
-      },
-      {
-        title: "EduPlot",
-        subTitle: "React, Flask, Firebase, Python, WebSockets, MUI",
-        date: "2023",
-        description:
-          "Robot that plots SVGs and inputs from a drawing tablet onto a whiteboard. I used React, Flask and Firebase to develop the full-stack web interface, with an interactive canvas, which also sends data to the robot using web sockets.",
-        link: "https://drive.google.com/file/d/146SCOIkLFP_fy7PF2nuTWvkp3_y5F_Hi/view",
-      },
-      {
-        title: "Drone Delivery System",
-        subTitle: "Java, Maven, GitHub Actions",
-        date: "2022",
-        description:
-          "Java application to simulate a drone delivery system for pizzas. I implemented a weighted A* search algorithm to plan an efficient delivery route.",
-        link: "https://github.com/nisigit/Informatics-Large-Practical",
-      },
-      {
-        title: "Venus & Mars",
-        subTitle: "React, Font Awesome",
-        date: "2021",
-        description:
-          "Promotional website for a dating app startup (now defunct). ",
-        link: "https://vnmwebsite.surge.sh",
-      },
-    ],
-  },
+  //   {
+  //     title: "Projects",
+  //     items: [
+  //       {
+  //         title: "Human Activity Recognition App",
+  //         subTitle: "Android Studio, Kotlin, Python, TensorFlow, Pandas",
+  //         date: "2023",
+  //         description:
+  //           "Android app to parse live movement data from Nordic Thingy and Respeck sensors using Bluetooth Low Energy. Deployed a TensorFlow model using TFLite to classify 44 stationary and dynamic activities with 97% accuracy.",
+  //         link: "https://github.com/nisigit/HAR-App",
+  //       },
+  //       {
+  //         title: "EduPlot",
+  //         subTitle: "React, Flask, Firebase, Python, WebSockets, MUI",
+  //         date: "2023",
+  //         description:
+  //           "Robot that plots SVGs and inputs from a drawing tablet onto a whiteboard. I used React, Flask and Firebase to develop the full-stack web interface, with an interactive canvas, which also sends data to the robot using web sockets.",
+  //         link: "https://drive.google.com/file/d/146SCOIkLFP_fy7PF2nuTWvkp3_y5F_Hi/view",
+  //       },
+  //       {
+  //         title: "Drone Delivery System",
+  //         subTitle: "Java, Maven, GitHub Actions",
+  //         date: "2022",
+  //         description:
+  //           "Java application to simulate a drone delivery system for pizzas. I implemented a weighted A* search algorithm to plan an efficient delivery route.",
+  //         link: "https://github.com/nisigit/Informatics-Large-Practical",
+  //       },
+  //       {
+  //         title: "Venus & Mars",
+  //         subTitle: "React, Font Awesome",
+  //         date: "2021",
+  //         description:
+  //           "Promotional website for a dating app startup (now defunct). ",
+  //         link: "https://vnmwebsite.surge.sh",
+  //       },
+  //     ],
+  //   },
 ];
 
 export type Content = {

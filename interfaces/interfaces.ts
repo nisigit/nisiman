@@ -8,7 +8,8 @@ export interface Course {
 export interface Project {
   title: string;
   description: string;
-  link: string;
   image: StaticImageData;
   tools: string[];
+  github?: string;
+  preview?: string;
 }
