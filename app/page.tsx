@@ -25,11 +25,11 @@ export default function Home() {
           </div>
           <div className="lg:w-3/5">
             <p className="mt-4 text-base">
-              Hi there! I&apos;m Nisiman. I&apos;m a Software Engineer from New
-              Delhi, currently based in London. I graduated from The University
-              of Edinburgh in July 2024 with a degree in Computer Science.
-              Before studying at Edinburgh, I was a student at The Mother&apos;s
-              International School, New Delhi.
+              Hi there! I&apos;m Nisiman. I&apos;m a Software Engineer based in
+              London. I graduated from The University of Edinburgh in July 2024
+              with an honours degree in Computer Science. Before studying at Edinburgh, I
+              was a student at The Mother&apos;s International School, New
+              Delhi.
             </p>
 
             <p className="mt-4 text-base">

@@ -6,12 +6,12 @@ import dronz from "@/public/assets/dronz.png";
 
 export const projects: Project[] = [
   {
-    title: "Activity Recognition App",
+    title: "Human Activity Recognition App",
     github: "https://github.com/nisigit/HAR-App",
     description:
-      "Android application that parses live movement data from Nordic Thingy and Respeck sensors using Bluetooth Low Energy. I deployed TensorFlow Machine-Learning models using TFLite to classify 44 stationary and dynamic activities with 97% accuracy. The models use Convolutional Neural Networks and Long Short-Term Memory networks.",
+      "Android application that parses live movement data from Nordic Thingy and Respeck sensors using Bluetooth Low Energy. The app also classifies 44 stationary and dynamic activities, such as running, hyperventilation, coughing etc., with a 97% accuracy. The TensorFlow classification models use Convolutional Neural Networks and Long Short-Term Memory networks and were deployed using TFLite. The app is intended to be used in a hospital setting to record data on multiple patient accounts and store it in an SQLite database.",
     image: har_app,
-    tools: ["Android", "Kotlin", "TensorFlow", "Keras", "Python"],
+    tools: ["Android", "TensorFlow", "Python", "SQL"],
   },
   {
     title: "EduPlot",
@@ -20,7 +20,7 @@ export const projects: Project[] = [
     description:
       "EduPlot is a robot that plots SVGs and inputs from a drawing tablet onto a whiteboard. I used React, Flask and Firebase to develop the full-stack web interface, with an interactive canvas, which also sends data to the robot using web sockets.",
     image: eduplot_interface,
-    tools: ["React", "Firebase", "Flask", "Web Sockets"],
+    tools: ["React", "Flask", "Python", "Firebase", "Web Sockets"],
   },
   {
     title: "Venus & Mars",
