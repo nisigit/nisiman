@@ -51,6 +51,7 @@ export default function Projects() {
         <button
           onClick={expandDiv}
           className="p-2 font-bold text-black dark:text-white text-lg cursor-pointer transform transition-colors duration-600 rounded-md bg-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 dark:bg-slate-800 bg-opacity-25 duration-200"
+          aria-label="Expand projects"
         >
           <FiArrowDown
             className={`fa-lg transform transition-transform ${
@@ -68,12 +69,12 @@ export default function Projects() {
         ))}
       </div>
       <div className="flex justify-center w-full m-2">
-        <p
+        <button
           onClick={expandDiv}
           className="expand text-black font-semibold dark:text-white text-sm w-fit rounded p-2 mt-2 cursor-pointer bg-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 dark:bg-slate-800 bg-opacity-25 duration-200"
         >
           {isExpanded ? "Show less" : "Show more..."}
-        </p>
+        </button>
       </div>
     </div>
   );

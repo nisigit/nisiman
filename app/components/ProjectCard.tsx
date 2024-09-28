@@ -31,13 +31,25 @@ export default function ProjectCard(project: Project) {
         </div>
         <div className="flex gap-4 my-2">
           {project.github && (
-            <Link href={project.github} target="_blank" className="w-6 h-6">
-              <FaGithub className="w-6 h-6 text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-105 duration-200" />
+            <Link
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-5 h-5"
+              aria-label={`View ${project.title} on GitHub`}
+            >
+              <FaGithub className="w-5 h-5 text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-105 duration-200" />
             </Link>
           )}
           {project.preview && (
-            <Link href={project.preview} target="_blank" className="w-6 h-6">
-              <FiLink className="w-6 h-6 text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-105 duration-200" />
+            <Link
+              href={project.preview}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-5 h-5"
+              aria-label={`View ${project.title} on GitHub`}
+            >
+              <FiLink className="w-5 h-5 text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-105 duration-200" />
             </Link>
           )}
         </div>
