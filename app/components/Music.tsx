@@ -1,14 +1,15 @@
 import Link from "next/link";
-import MusicList from "@/app/components/MusicList";
-import { FaSpotify } from "react-icons/fa";
 import {
   getCurrentlyPlaying,
   getRecentTracks,
   getTopArtists,
   getTopTracks,
 } from "@/app/lib/spotify";
+import { Track, Artist } from "@/interfaces/music";
+import MusicWithTabs from "./MusicWithTabs";
+import { FaSpotify } from "react-icons/fa";
 
-const listLimit = 3;
+const listLimit = 5;
 
 export default async function Music() {
   const results = await Promise.allSettled([
@@ -20,7 +21,7 @@ export default async function Music() {
       console.error("Error fetching recent tracks:", error);
       return [];
     }),
-    getTopArtists(listLimit + 1).catch((error) => {
+    getTopArtists(listLimit).catch((error) => {
       console.error("Error fetching top artists:", error);
       return [];
     }),
@@ -30,11 +31,16 @@ export default async function Music() {
     }),
   ]);
 
-  const topTracks = results[0].status === "fulfilled" ? results[0].value : [];
-  const recentTracks =
+  const topTracks: Track[] =
+    results[0].status === "fulfilled" ? results[0].value : [];
+
+  const recentTracks: Track[] =
     results[1].status === "fulfilled" ? results[1].value : [];
-  const topArtists = results[2].status === "fulfilled" ? results[2].value : [];
-  const currentTrack =
+
+  const topArtists: Artist[] =
+    results[2].status === "fulfilled" ? results[2].value : [];
+
+  const currentTrack: Track | null =
     results[3].status === "fulfilled" ? results[3].value : null;
 
   return (
@@ -65,15 +71,8 @@ export default async function Music() {
           </p>
         </div>
       </div>
-      <div className="mt-3 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-3">
-        {/* Recently played */}
-        <MusicList type="recent" list={recentTracks} />
-
-        {/* Top Songs */}
-        <MusicList type="top" list={topTracks} />
-
-        {/* Top Artists */}
-        <MusicList type="artist" list={topArtists} />
+      <div className="mt-3 w-full flex flex-col items-center text-start">
+        <MusicWithTabs {...{ topTracks, recentTracks, topArtists }} />
       </div>
     </>
   );

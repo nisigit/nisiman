@@ -27,9 +27,9 @@ export default function Home() {
             <p className="mt-4 text-base">
               Hi there! I&apos;m Nisiman. I&apos;m a Software Engineer based in
               London. I graduated from The University of Edinburgh in July 2024
-              with an honours degree in Computer Science. Before studying at Edinburgh, I
-              was a student at The Mother&apos;s International School, New
-              Delhi.
+              with an honours degree in Computer Science. Before studying at
+              Edinburgh, I was a student at The Mother&apos;s International
+              School, New Delhi.
             </p>
 
             <p className="mt-4 text-base">
@@ -86,7 +86,7 @@ export default function Home() {
       <section className="px-4 py-6 m-4 sm:m-6 lg:mx-8 lg:my-4 my-2">
         <h2 className="text-xl font-bold leading-tight sm:text-2xl">Music</h2>
         <p className="mt-2 text-base">
-          Here&apos;s what I&apos;m listening to right now:
+          Here&apos;s my listening activity on Spotify in the last month:
         </p>
         <Music />
       </section>

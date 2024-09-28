@@ -81,6 +81,7 @@ export const getTopTracks = async (listLimit: Number) => {
     return {
       title: track.name,
       artist: track.artists.map((_artist: any) => _artist.name).join(", "),
+      image: track.album.images[0].url,
       url: track.external_urls.spotify,
     };
   });
@@ -143,6 +144,7 @@ export const getCurrentlyPlaying = async () => {
   return {
     artist: data.item.artists.map((artist: any) => artist.name).join(", "),
     title: data.item.name,
+    image: data.item.album.images[0].url,
     url: data.item.external_urls.spotify,
   };
 };

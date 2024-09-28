@@ -34,7 +34,7 @@ const Content: React.FC<ContentProps> = ({ title, items }) => {
                 </div>
                 <div className="flex flex-col space-y-2">
                   <div className="flex flex-wrap items-center sm:space-x-2">
-                    <p className="text-sm md:text-md text-gray-700 dark:text-gray-400 mx-1">
+                    <p className="text-sm md:text-md text-gray-700 dark:text-gray-400 mr-1">
                       {item.subTitle}
                     </p>
                     <div className="flex flex-wrap gap-2">
