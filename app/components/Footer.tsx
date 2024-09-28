@@ -8,6 +8,7 @@ export default function Footer() {
         <Link
           href="https://drive.google.com/file/d/1wNBd0Fis1hNJSgiGqouNyU3Oc7QJYHzu/view?usp=drive_link"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Download Resume
         </Link>

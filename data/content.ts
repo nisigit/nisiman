@@ -4,16 +4,17 @@ export const contentData = [
     items: [
       {
         title: "Playtech",
-        subTitle:
-          "Software Developer -- Python | Golang | SQL | Kafka | Docker",
+        subTitle: "Software Development Engineer",
+        skills: ["Python", "Golang", "SQL", "Kafka", "Docker"],
         date: "07/2024 - present",
         description:
-          "I'm a developer in the Sportsbook team, working on the backend services for the Sportsbook platform.",
+          "I'm a developer in the Sportsbook team, working on feature development and maintenance of Playtech's sports betting CMS.",
         link: "https://www.playtech.com/",
       },
       {
         title: "Addepar",
-        subTitle: "Software Engineer Intern -- Python | Java | Spark | MySQL",
+        subTitle: "Software Engineer Intern",
+        skills: ["Python", "Java", "Spark", "MySQL"],
         date: "06/2023 - 08/2023",
         description:
           "Software Engineer Intern in the Feeds Infrastructure & Tooling team. I developed an environment, and its data feed, to synthesise dummy investment portfolios and transactions based on configurations to demonstrate the platform's features to prospective clients.",
@@ -22,6 +23,7 @@ export const contentData = [
       {
         title: "Edinburgh University Formula Student",
         subTitle: "Software Developer",
+        skills: ["C++", "Python", "ROS", "Gazebo"],
         date: "08/2022 - 08/2023",
         description:
           "Software Developer in Edinburgh University Formula Student's simulation team, working on the open-source simulation software for Formula Student driverless cars (eufs_sim).",
@@ -31,6 +33,7 @@ export const contentData = [
         title: "The University of Edinburgh Information Services",
         subTitle: "Web Developer",
         date: "06/2022 - 04/2023",
+        skills: ["Laravel", "Drupal", "JavaScript", "SQL", "Docker"],
         description:
           "As a part-time developer, I worked on migrating the university's Drupal CMS to the latest version and developed a full-stack live status dashboard for the University's websites using Laravel.",
         link: "https://www.ed.ac.uk/information-services",
@@ -38,6 +41,7 @@ export const contentData = [
       {
         title: "Endeavour",
         subTitle: "Software Developer",
+        skills: ["React", "C++"],
         date: "09/2021 - 05/2022",
         description:
           "Developer in the Darwin III rocket's software team, where I developed the local and online dashboards to read the rocket's telemetry data in real-time and update its state.",
@@ -46,14 +50,16 @@ export const contentData = [
       {
         title: "Tech Mahindra",
         subTitle: "Software Engineer Intern",
+        skills: ["Java", "SpringBoot", "SQL"],
         date: "05/2021 - 08/2021",
         description:
-          "Full-stack Software Engineer Intern (trainee) in Delhi Police's CCTNS portal project. I added new search pages on the Java EE application to dynamically generate MySQL queries and display data using JasperReports.",
+          "Full-stack Software Engineer Intern (trainee) in Delhi Police's CCTNS portal project. I added new search pages on the Java SpringBoot application to dynamically generate MySQL queries and display data using JasperReports.",
         link: "https://www.techmahindra.com/",
       },
       {
         title: "The University of Edinburgh - Accommodation Services",
         subTitle: "Resident Assistant",
+        skills: ["Leadership", "Communication", "Event Planning"],
         date: "09/2022 - 05/2024",
         description:
           "Resident Assistant in the University's accommodation services, facilitating over 300 students settle into university life by organising events and being students' first point of contact for any help.",
@@ -75,7 +81,7 @@ export const contentData = [
         title: "The Mother's International School",
         subTitle:
           "Grade 12 (CBSE) — Physics, Chemistry, Mathematics, Computer Science, English",
-        date: "04/2008 - 05/2020",
+        date: "04/2006 - 05/2020",
       },
     ],
   },
@@ -127,6 +133,7 @@ export type Content = {
     date: string;
     description?: string;
     link?: string;
+    skills?: string[];
   }[];
 };
 

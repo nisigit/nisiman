@@ -11,8 +11,7 @@ export default function ProjectCard(project: Project) {
         <Image
           src={project.image}
           alt={project.title}
-          width={350}
-          className="rounded-lg overflow-hidden w-full max-h-[280px]"
+          className="rounded-lg overflow-hidden max-h-[300px] max-w-[350px]"
         />
       </div>
       <div className="flex-1">

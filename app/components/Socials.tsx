@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { IconType } from "react-icons";
 import { FaInstagram, FaLinkedin, FaGithub, FaSpotify } from "react-icons/fa";
 
@@ -40,7 +41,7 @@ export default function Socials() {
     <>
       <div className="mt-6 lg:my-3 flex-wrap flex-row">
         {socialButtons.map((button, index) => (
-          <a
+          <Link
             href={button.href}
             key={index}
             target="_blank"
@@ -52,7 +53,7 @@ export default function Socials() {
               <button.Icon className="w-5 h-5 fill-current" />
               <span>{button.text}</span>
             </button>
-          </a>
+          </Link>
         ))}
       </div>
     </>

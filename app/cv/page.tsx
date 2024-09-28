@@ -32,9 +32,23 @@ const Content: React.FC<ContentProps> = ({ title, items }) => {
                     </Link>
                   ) : null}
                 </div>
-                <p className="text-sm md:text-md text-gray-700 dark:text-gray-400">
-                  {item.subTitle}
-                </p>
+                <div className="flex flex-col space-y-2">
+                  <div className="flex flex-wrap items-center sm:space-x-2">
+                    <p className="text-sm md:text-md text-gray-700 dark:text-gray-400 mx-1">
+                      {item.subTitle}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {item.skills?.map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-xs md:text-sm text-gray-700 dark:text-gray-400 border border-gray-500 dark:border-gray-600 px-2 py-1 rounded"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
                 {item.description ? (
                   <p className="text-gray-700 dark:text-gray-400 mt-2">
                     {item.description}

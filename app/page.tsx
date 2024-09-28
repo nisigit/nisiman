@@ -20,7 +20,7 @@ export default function Home() {
             <Image
               src={nisi}
               alt="Nisiman's Picture"
-              className="rounded-full lg:rounded-md w-[100px] lg:w-[250px] m-3"
+              className="rounded-full lg:rounded-md w-[150px] lg:w-[250px] my-3"
             />
           </div>
           <div className="lg:w-3/5">
@@ -38,6 +38,7 @@ export default function Home() {
               <Link
                 href="https://drive.google.com/file/d/1wNBd0Fis1hNJSgiGqouNyU3Oc7QJYHzu/view?usp=drive_link"
                 className="text-blue-500 underline hover:text-blue-600 duration-100"
+                rel="noopener noreferrer"
                 target="_blank"
               >
                 here
@@ -67,13 +68,14 @@ export default function Home() {
         <h2 className="text-xl font-bold leading-tight sm:text-2xl">Contact</h2>
         <p className="mt-2 text-base">
           The best way to reach me is to send me an email at{" "}
-          <a
+          <Link
             href="mailto:nisimanbhardwaj29@gmail.com"
             className="text-blue-500 underline hover:text-blue-600 duration-100"
+            rel="noopener noreferrer"
             target="_blank"
           >
             nisimanbhardwaj29@gmail.com
-          </a>
+          </Link>
           .<br></br>
           Alternatively, you can connect with me on any of my socials:{" "}
         </p>

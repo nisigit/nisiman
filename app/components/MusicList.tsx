@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Track, Artist } from "@/interfaces/music";
 
 interface MusicListProps {
@@ -16,7 +17,12 @@ export default function MusicList({ type, list }: MusicListProps) {
           : "Top Artists (month)"}
       </h1>
       {list.map((item: any, index: number) => (
-        <a key={index} href={item.url} target="_blank" rel="noreferrer">
+        <Link
+          key={index}
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <div className="w-full p-2 rounded-sm flex font-semibold group hover:bg-green-200 dark:hover:bg-green-900 hover:bg-opacity-30 dark:hover:bg-opacity-20 hover:text-green-600 dark:hover:text-green-500">
             <h1 className="self-center text-xl select-none mr-3">
               {index + 1}
@@ -32,7 +38,7 @@ export default function MusicList({ type, list }: MusicListProps) {
               )}
             </div>
           </div>
-        </a>
+        </Link>
       ))}
     </div>
   );
