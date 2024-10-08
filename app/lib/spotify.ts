@@ -7,7 +7,7 @@ const getAccessToken = async () => {
     method: "POST",
     headers: {
       Authorization: `Basic ${Buffer.from(
-        `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`
+        `${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`,
       ).toString("base64")}`,
       "Content-Type": "application/x-www-form-urlencoded",
     },
@@ -19,7 +19,7 @@ const getAccessToken = async () => {
   });
 
   if (!response.ok) {
-    const message = `An error has occured: ${response.status}`;
+    const message = `Error fetching access token: ${response.status}`;
     throw new Error(message);
   }
 
@@ -60,7 +60,7 @@ export const getTopTracks = async (listLimit: Number) => {
   const url = new URL("https://api.spotify.com/v1/me/top/tracks");
   const params = {
     time_range: "short_term",
-    limit: "5",
+    limit: `${listLimit}`,
   };
   url.search = new URLSearchParams(params).toString();
 
@@ -68,16 +68,19 @@ export const getTopTracks = async (listLimit: Number) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    next: {
+      revalidate: 600,
+    },
   });
 
   if (!response.ok) {
-    const message = `An error has occured: ${response.status}`;
+    const message = `Error fetching top tracks: ${response.status}`;
     throw new Error(message);
   }
 
   const data = await response.json();
 
-  return data.items.slice(0, listLimit).map((track: any) => {
+  return data.items.map((track: any) => {
     return {
       title: track.name,
       artist: track.artists.map((_artist: any) => _artist.name).join(", "),
@@ -93,7 +96,7 @@ export const getTopArtists = async (listLimit: Number) => {
   const url = new URL("https://api.spotify.com/v1/me/top/artists");
   const params = {
     time_range: "short_term",
-    limit: "5",
+    limit: `${listLimit}`,
   };
   url.search = new URLSearchParams(params).toString();
 
@@ -101,16 +104,19 @@ export const getTopArtists = async (listLimit: Number) => {
     headers: {
       Authorization: `Bearer ${access_token}`,
     },
+    next: {
+      revalidate: 600,
+    },
   });
 
   if (!response.ok) {
-    const message = `An error has occured: ${response.status}`;
+    const message = `Error fetching top artists: ${response.status}`;
     throw new Error(message);
   }
 
   const data = await response.json();
 
-  return data.items.slice(0, listLimit).map((artist: any) => {
+  return data.items.map((artist: any) => {
     return {
       name: artist.name,
       image: artist.images[0].url,
