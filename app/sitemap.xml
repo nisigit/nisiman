@@ -1,19 +1,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://nisiman.xyz</loc>
-    <lastmod>2023-02-09</lastmod>
+    <loc>https://nisiman.com</loc>
+    <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1</priority>
   </url>
   <url>
-    <loc>https://nisiman.xyz/cv</loc>
-    <lastmod>2023-02-09</lastmod>
+    <loc>https://nisiman.com/cv</loc>
+    <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://nisiman.xyz/coursework</loc>
-    <lastmod>2023-02-09</lastmod>
+    <loc>https://nisiman.com/coursework</loc>
+    <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
