@@ -81,7 +81,7 @@ export default function CV() {
                 className="hover:underline"
                 rel="canonical noopener noreferrer"
               >
-                nisiman.xyz
+                nisiman.com
               </Link>
             </span>
           </div>

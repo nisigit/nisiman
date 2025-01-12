@@ -1,12 +1,14 @@
 # Nisiman
-Source code for [nisiman.xyz](https://nisiman.xyz), my personal website.
+
+Source code for [nisiman.com](https://nisiman.com), my personal website.
 
 ## Overview
+
 - `/` - About me
 - `/coursework` - My coursework at university and other online courses
 - `/cv` - My CV
 
-The website is also a real-time indicator of what songs I'm currently playing on Spotify, my recently played tracks, and my top tracks and artists in the last month. This was possible using Serverless functions on Next.js and the Spotify API. 
+The website is also a real-time indicator of what songs I'm currently playing on Spotify, my recently played tracks, and my top tracks and artists in the last month. This was possible using Serverless functions on Next.js and the Spotify API.
 
 ## Built using
 
