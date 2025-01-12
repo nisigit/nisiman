@@ -29,7 +29,7 @@ export default function MusicList({ type, list }: MusicListProps) {
           key={index}
           href={item.url}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="canonical noopener noreferrer"
         >
           <div className="w-full h-[68px] flex items-center gap-2 md:gap-4 md:px-2 rounded-sm font-semibold group hover:bg-green-200 dark:hover:bg-green-900 hover:bg-opacity-30 dark:hover:bg-opacity-20 hover:text-green-600 dark:hover:text-green-500">
             <div className="flex items-center gap-2 shrink-0">

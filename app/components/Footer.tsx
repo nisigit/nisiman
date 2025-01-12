@@ -19,7 +19,7 @@ export default function Footer() {
       <Link
         href="https://github.com/nisigit/nisigit.github.io"
         target="_blank"
-        rel="noreferrer noopener"
+        rel="noopener noreferrer"
       >
         <p className="text-sm">Built with ❤️ using Next.js and Tailwind CSS</p>
       </Link>

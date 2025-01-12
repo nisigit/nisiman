@@ -48,7 +48,9 @@ export default function Navbar() {
                   : "text-gray-700 dark:text-gray-400"
               } nav-links px-4 cursor-pointer text-md hover:scale-105 hover:text-black dark:hover:text-white duration-200`}
             >
-              <Link href={link.link}>{link.name}</Link>
+              <Link href={link.link} rel="canonical noopener noreferrer">
+                {link.name}
+              </Link>
             </li>
           ))}
         </ul>
@@ -71,7 +73,11 @@ export default function Navbar() {
                     : "text-gray-800 dark:text-gray-400"
                 } px-4 cursor-pointer py-6 text-2xl`}
               >
-                <Link onClick={() => setNav(!nav)} href={link.link}>
+                <Link
+                  onClick={() => setNav(!nav)}
+                  href={link.link}
+                  rel="canonical noopener noreferrer"
+                >
                   {link.name}
                 </Link>
               </li>

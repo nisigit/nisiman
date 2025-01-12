@@ -76,7 +76,11 @@ export default function CV() {
               Software Engineer
             </p>
             <span className="text-sm text-slate-800 dark:text-slate-400">
-              <Link href="/" className="hover:underline">
+              <Link
+                href="/"
+                className="hover:underline"
+                rel="canonical noopener noreferrer"
+              >
                 nisiman.xyz
               </Link>
             </span>
