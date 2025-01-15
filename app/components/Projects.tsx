@@ -50,7 +50,7 @@ export default function Projects() {
         </h2>
         <button
           onClick={expandDiv}
-          className="p-2 font-bold text-black dark:text-white text-lg cursor-pointer transform transition-colors duration-600 rounded-md bg-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 dark:bg-slate-800 bg-opacity-25 duration-200"
+          className="p-2 font-bold text-black dark:text-white text-lg cursor-pointer transform transition-all duration-300 ease-in-out rounded-md bg-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 dark:bg-slate-800 bg-opacity-25"
           aria-label="Expand projects"
         >
           <FiArrowDown

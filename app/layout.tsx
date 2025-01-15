@@ -39,11 +39,12 @@ export default function RootLayout({
           name="google-site-verification"
           content="4nhUpWRjo9954Ju2x1CbNIt4kS-BXflq5mdjC90UG94"
         />
+        <meta name="color-scheme" content="dark light" />
       </head>
       <body className={inter.className}>
         <Providers>
-          <div className=" bg-sky-400 dark:bg-slate-800 min-h-screen p-2 sm:p-4">
-            <div className="mx-auto my-4 xl:p-4 lg:my-8 text-lg w-full md:max-w-5xl rounded-3xl shadow-2xl bg-sky-50 text-black dark:bg-gray-900 dark:text-white dark:shadow-gray-800 overflow-auto">
+          <div className="transition-all duration-300 ease-in-out bg-sky-400 dark:bg-slate-800 min-h-screen p-2 sm:p-4">
+            <div className="transition-all duration-300 ease-in-out mx-auto my-4 xl:p-4 lg:my-8 text-lg w-full md:max-w-5xl rounded-3xl shadow-2xl bg-sky-50 text-black dark:bg-gray-900 dark:text-white dark:shadow-gray-800 overflow-auto">
               <section className="py-6 px-2 lg:px-4 m-2 sm:m-6 border-b-4 border-neutral-300 dark:border-slate-700">
                 <div className="flex justify-between">
                   <div className="flex items-center">

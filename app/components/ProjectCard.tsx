@@ -6,7 +6,7 @@ import { FiLink } from "react-icons/fi";
 
 export default function ProjectCard(project: Project) {
   return (
-    <div className="flex flex-col lg:flex-row lg:min-h-[280px] lg:items-center bg-slate-200 text-slate-900 dark:bg-gray-800 dark:text-white p-4 lg:p-6 rounded-lg my-1 overflow-hidden w-full gap-4">
+    <div className="flex flex-col lg:flex-row lg:min-h-[280px] lg:items-center bg-slate-200 text-slate-900 dark:bg-gray-800 dark:text-white p-4 lg:p-6 rounded-lg my-1 overflow-hidden w-full gap-4 transition-all duration-300 ease-in-out">
       <div className="flex-shrink-0 flex justify-center items-center lg:justify-start lg:items-start lg:w-2/5">
         <Image
           src={project.image}
@@ -38,7 +38,7 @@ export default function ProjectCard(project: Project) {
               className="w-5 h-5"
               aria-label={`View ${project.title} on GitHub`}
             >
-              <FaGithub className="w-5 h-5 text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-105 duration-200" />
+              <FaGithub className="w-5 h-5 text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-105 transition-all duration-300 ease-in-out" />
             </Link>
           )}
           {project.preview && (
@@ -49,7 +49,7 @@ export default function ProjectCard(project: Project) {
               className="w-5 h-5"
               aria-label={`View ${project.title} on GitHub`}
             >
-              <FiLink className="w-5 h-5 text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-105 duration-200" />
+              <FiLink className="w-5 h-5 text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-105 transition-all duration-300 ease-in-out" />
             </Link>
           )}
         </div>

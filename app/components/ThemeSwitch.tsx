@@ -6,11 +6,11 @@ import Image from "next/image";
 
 export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
-  const { setTheme, resolvedTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
-  }, [setTheme]);
+  }, []);
 
   if (!mounted)
     return (
@@ -27,12 +27,11 @@ export default function ThemeSwitch() {
     );
 
   return (
-    <div className="p-2 text-lg cursor-pointer transform transition duration-600 rounded-md text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-125">
-      {resolvedTheme === "dark" ? (
-        <FiMoon onClick={() => setTheme("light")} />
-      ) : (
-        <FiSun onClick={() => setTheme("dark")} />
-      )}
+    <div
+      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      className="p-2 text-lg cursor-pointer transform transition duration-600 rounded-md text-gray-700 hover:text-black dark:text-gray-400 dark:hover:text-white hover:scale-125"
+    >
+      {theme === "dark" ? <FiMoon /> : <FiSun />}
     </div>
   );
 }
