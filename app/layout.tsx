@@ -6,6 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -48,9 +49,11 @@ export default function RootLayout({
               <section className="py-6 px-2 lg:px-4 m-2 sm:m-6 border-b-4 border-neutral-300 dark:border-slate-700">
                 <div className="flex justify-between">
                   <div className="flex items-center">
-                    <h1 className="text-xl font-bold leading-tight sm:text-4xl">
-                      Nisiman
-                    </h1>
+                    <Link href={"/"}>
+                      <h1 className="text-xl font-bold leading-tight sm:text-4xl hover:underline">
+                        Nisiman
+                      </h1>
+                    </Link>
                   </div>
                   <div>
                     <Navbar />

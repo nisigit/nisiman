@@ -27,9 +27,9 @@ export default function Home() {
             <p className="mt-4 text-base">
               Hi there! I&apos;m Nisiman. I&apos;m a Software Engineer based in
               London. I graduated from The University of Edinburgh in July 2024
-              with an honours degree in Computer Science. Before studying at
-              Edinburgh, I was a student at The Mother&apos;s International
-              School, New Delhi.
+              with a first-class honours degree in Computer Science. Before
+              studying at Edinburgh, I was a student at The Mother&apos;s
+              International School, New Delhi.
             </p>
 
             <p className="mt-4 text-base">

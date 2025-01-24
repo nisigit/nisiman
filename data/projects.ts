@@ -3,8 +3,16 @@ import har_app from "@/public/assets/har-app.png";
 import venus_mars from "@/public/assets/vnm.png";
 import eduplot_interface from "@/public/assets/eduplot-interface.png";
 import dronz from "@/public/assets/dronz.png";
+import schoolseeker from "@/public/assets/schoolseeker.svg";
 
 export const projects: Project[] = [
+  {
+    title: "SchoolSeeker.in",
+    preview: "https://schoolseeker.in",
+    description: "Building an all-in-one, AI-powered school admissions portal.",
+    image: schoolseeker,
+    tools: ["Next.js", "Node.js", "PostgreSQL", "AWS", "TensorFlow"],
+  },
   {
     title: "Human Activity Recognition App",
     github: "https://github.com/nisigit/HAR-App",
