@@ -25,25 +25,23 @@ export default function Home() {
           </div>
           <div className="lg:w-3/5">
             <p className="mt-4 text-base">
-              Hi there! I&apos;m Nisiman. I&apos;m a Software Engineer based in
-              London. I graduated from The University of Edinburgh in July 2024
-              with a first-class honours degree in Computer Science. Before
-              studying at Edinburgh, I was a student at The Mother&apos;s
-              International School, New Delhi.
+              {
+                "Hi there! I'm Nisiman. I'm a Software Engineer based in London. I graduated from The University of Edinburgh in July 2024 with a first-class honours degree in Computer Science. Before studying at Edinburgh, I was a student at The Mother's International School, New Delhi."
+              }
             </p>
 
             <p className="mt-4 text-base">
               I have a demonstrated history of working with distributed systems,
-              microservices and financial data feeds (resume{" "}
+              microservices and financial data feeds (
               <Link
                 href="https://drive.google.com/file/d/1wNBd0Fis1hNJSgiGqouNyU3Oc7QJYHzu/view?usp=drive_link"
                 className="text-blue-500 underline hover:text-blue-600 duration-100"
                 rel="noopener noreferrer"
                 target="_blank"
               >
-                here
+                resume
               </Link>
-              ). I am currently interested in learning about building scaleable
+              ). I am currently interested in learning about building scalable
               applications, Distributed Systems and Machine Learning.
             </p>
 
@@ -86,7 +84,7 @@ export default function Home() {
       <section className="px-4 py-6 m-4 sm:m-6 lg:mx-8 lg:my-4 my-2">
         <h2 className="text-xl font-bold leading-tight sm:text-2xl">Music</h2>
         <p className="mt-2 text-base">
-          Here&apos;s my listening activity on Spotify in the last month:
+          {"Here's my listening activity on Spotify in the last month:"}
         </p>
         <Music />
       </section>
