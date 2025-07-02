@@ -67,12 +67,12 @@ export default function Home() {
         <p className="mt-2 text-base">
           The best way to reach me is to send me an email at{" "}
           <Link
-            href="mailto:nisimanbhardwaj29@gmail.com"
+            href="mailto:nisiman2002@gmail.com"
             className="text-blue-500 underline hover:text-blue-600 duration-100"
             rel="noopener noreferrer"
             target="_blank"
           >
-            nisimanbhardwaj29@gmail.com
+            nisiman2002@gmail.com
           </Link>
           .<br></br>
           Alternatively, you can connect with me on any of my socials:{" "}

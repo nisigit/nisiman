@@ -14,14 +14,14 @@ export default function Footer() {
         </Link>
       </span>
       <p className="text-xs text-slate-700 dark:text-slate-400">
-        © Nisiman 2024. All Rights Reserved
+        © Nisiman 2025. All Rights Reserved
       </p>
       <Link
         href="https://github.com/nisigit/nisigit.github.io"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <p className="text-sm">Built with ❤️ using Next.js and Tailwind CSS</p>
+        <p className="text-sm">Built with Next.js and Tailwind CSS</p>
       </Link>
       <ScrollToTop />
     </footer>
