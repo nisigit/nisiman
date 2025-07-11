@@ -30,21 +30,4 @@ export const projects: Project[] = [
     image: eduplot_interface,
     tools: ["React", "Flask", "Python", "Firebase", "Web Sockets"],
   },
-  {
-    title: "Venus & Mars",
-    github: "https://github.com/nisigit/vm-website",
-    preview: "https://vnmwebsite.surge.sh/",
-    description:
-      "Promotional website for a dating app startup (now defunct). I also created React Native components for the app and took part in business meetings and financial model discussions.",
-    image: venus_mars,
-    tools: ["React"],
-  },
-  {
-    title: "Drone Delivery System",
-    github: "https://github.com/nisigit/informatics-large-practical",
-    description:
-      "A Java application to simulate a drone delivery system for pizzas. I implemented a weighted A* search algorithm to plan an efficient delivery route.",
-    image: dronz,
-    tools: ["Java", "Maven", "GeoJSON", "GitHub Actions"],
-  },
 ];
