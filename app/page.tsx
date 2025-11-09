@@ -25,14 +25,12 @@ export default function Home() {
           </div>
           <div className="lg:w-3/5">
             <p className="mt-4 text-base">
-              {
-                "Hi there! I'm Nisiman. I'm a Software Engineer based in London. I graduated from The University of Edinburgh in July 2024 with a first-class honours degree in Computer Science. Before studying at Edinburgh, I was a student at The Mother's International School, New Delhi."
-              }
-            </p>
-
-            <p className="mt-4 text-base">
-              I have a demonstrated history of working with distributed systems,
-              microservices and financial data feeds (
+              Hi there! I&apos;m Nisiman. I&apos;m a Software Engineer at
+              PolyAI, based in London. I graduated from The University of
+              Edinburgh in July 2024 with a first-class honours degree in
+              Computer Science. Before Edinburgh, I was a student at The
+              Mother&apos;s International School, New Delhi. You can read about
+              my experiences in my{" "}
               <Link
                 href="https://drive.google.com/file/d/1wNBd0Fis1hNJSgiGqouNyU3Oc7QJYHzu/view?usp=drive_link"
                 className="text-blue-500 underline hover:text-blue-600 duration-100"
@@ -41,24 +39,18 @@ export default function Home() {
               >
                 resume
               </Link>
-              ). I am currently interested in learning about building scalable
-              applications, Distributed Systems and Machine Learning.
+              .
             </p>
 
             <p className="mt-4 text-base">
               In my free time, you can find me playing a sport or chess. I also
-              enjoy music a lot and can play the <i>Bansuri</i> and a bit of
-              guitar. My favourite musicians include Daft Punk
+              enjoy music and can play the <i>Bansuri</i> and a bit of guitar.
+              My favourite musicians include Daft Punk
               <Image className="inline m-0" src={dp} alt="dp" height={25} /> and
               Foster The People.
             </p>
           </div>
         </div>
-      </section>
-
-      {/* Projects */}
-      <section className="p-4 m-4 sm:m-6 lg:mx-8 lg:my-4">
-        <Projects />
       </section>
 
       {/* Contact */}
@@ -78,6 +70,11 @@ export default function Home() {
           Alternatively, you can connect with me on any of my socials:{" "}
         </p>
         <Socials />
+      </section>
+
+      {/* Projects */}
+      <section className="p-4 m-4 sm:m-6 lg:mx-8 lg:my-4">
+        <Projects />
       </section>
 
       {/* Music */}

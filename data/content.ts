@@ -1,14 +1,24 @@
+import { title } from "process";
+
 export const contentData = [
   {
     title: "Work Experience",
     items: [
       {
+        title: "PolyAI",
+        subTitle: "Software Engineer",
+        skills: ["Python", "Go"],
+        date: "06/2023 - 08/2023",
+        description: "Runtime team",
+        link: "https://www.poly.ai/",
+      },
+      {
         title: "Playtech",
-        subTitle: "Software Development Engineer",
+        subTitle: "Software Developer",
         skills: ["Python", "Golang", "SQL", "Kafka", "Docker"],
         date: "07/2024 - present",
         description:
-          "I'm a developer in the Sportsbook team, working on feature development and maintenance of Playtech's sports betting CMS.",
+          "As a developer in the Sportsbook team, I worked on feature development and maintenance of Playtech's sports betting CMS.",
         link: "https://www.playtech.com/",
       },
       {
@@ -17,7 +27,7 @@ export const contentData = [
         skills: ["Python", "Java", "Spark", "MySQL"],
         date: "06/2023 - 08/2023",
         description:
-          "Software Engineer Intern in the Feeds Infrastructure & Tooling team. I developed an environment, and its data feed, to synthesise dummy investment portfolios and transactions based on configurations to demonstrate the platform's features to prospective clients.",
+          "Software Engineer Intern in the Feeds Infrastructure & Tooling team. I developed an environment, and its data feed, to generate synthetic portfolio positions and transactions based on configurations to demonstrate the platform's features to prospective clients.",
         link: "https://www.addepar.com/",
       },
       {
